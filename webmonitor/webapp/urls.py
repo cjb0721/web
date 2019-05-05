@@ -5,4 +5,5 @@ app_name = 'webapp'
 
 urlpatterns = [
     url('^$', views.index, name='index'),
+    url('^add/$', views.add, name='add'),
 ]

@@ -15,6 +15,11 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+#Global Variable
+SYSTEM_NAME="分布式质量监控平台 V1.0"
+
+#IDC list
+IDC={'ct':'电信','cnc':'联通','cmcc':'移动'}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
