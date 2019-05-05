@@ -19,7 +19,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-push-1 col-md-2">监控URL</div>
-                    <div class="col-md-push-1 col-md-9"><input type="text" name="appurl" style="width: 80%" required></div>
+                    <div class="col-md-push-1 col-md-9"><input type="url" name="appurl" style="width: 80%" required></div>
                 </div>
                 <div class="row">
                     <div class="col-md-push-1 col-md-2">通知方式</div>
@@ -39,15 +39,23 @@
                     <div class="col-md-push-1 col-md-2">探测规则</div>
                     <div class="col-md-push-1 col-md-9">
                         <input name="status" type="checkbox" id="status" value="200" required/>200状态码&nbsp;&nbsp;&nbsp;
-                        自定义返回串：<input name="responsechar" type="input" id="responsechar" required/>
+                        自定义返回串：<input name="responsechar" type="input" id="responsechar"/>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-offset-5 col-md-1"><input type="submit" value="增加"></div>
+                    <div class="col-md-offset-5 col-md-1"><input type="submit" value="增加" id="bt"></div>
                 <div class="col-md-1"><a href="{% url 'webapp:index' %}">返回</a></div>
                 </div>
             </form>
         </div>
 
     </div>
+
+    <!--<script>-->
+        <!--$(function () {-->
+            <!--$("#bt").click(function () {-->
+                <!--console.log($("input[name='idc']").val())-->
+            <!--})-->
+        <!--})-->
+    <!--</script>-->
 {% endblock %}

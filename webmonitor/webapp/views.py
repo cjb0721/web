@@ -54,7 +54,26 @@ def add(request):
     if request.method == 'GET':
         return render(request, 'webapp/add.html', {'IDC': idc_str})
     elif request.method == 'POST':
-
-        return redirect(reverse('webapp:index'))
+        # print(request.POST)
+        appname = request.POST['appname']
+        appurl = request.POST['appurl']
+        hotice = request.POST['hotice']
+        status = request.POST['status']
+        responsechar = request.POST['responsechar']
+        if responsechar:
+            temp = responsechar
+        else:
+            temp = status
+        if 'idc' in request.POST:
+            idc = request.POST['idc']
+            host_info_dict = {'app_name': appname, 'url': appurl.encode("utf8"), 'idc': idc, 'alarm_type': hotice, 'alarm_info': temp}
+            print(appname, appurl, hotice, idc, status, responsechar)
+            print(host_info_dict)
+            host = Host_info.objects.create(**host_info_dict)
+            print(host)
+            return redirect(reverse('webapp:index'))
+        else:
+            info = ['系统提示：', '探测点不能为空', '/webapp/']
+            return render(request, 'webapp/error.html', {'show_info': info})
 
 
