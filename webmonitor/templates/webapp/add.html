@@ -15,11 +15,11 @@
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-push-1 col-md-2">业务名称</div>
-                    <div class="col-md-push-1 col-md-9"><input type="text" name="appname" required></div>
+                    <div class="col-md-push-1 col-md-9"><input type="text" name="appname" required style="border-radius: 5px;"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-push-1 col-md-2">监控URL</div>
-                    <div class="col-md-push-1 col-md-9"><input type="url" name="appurl" style="width: 80%" required></div>
+                    <div class="col-md-push-1 col-md-9"><input type="url" name="appurl" style="width: 80%;border-radius: 5px;" required></div>
                 </div>
                 <div class="row">
                     <div class="col-md-push-1 col-md-2">通知方式</div>
@@ -39,7 +39,7 @@
                     <div class="col-md-push-1 col-md-2">探测规则</div>
                     <div class="col-md-push-1 col-md-9">
                         <input name="status" type="checkbox" id="status" value="200" required/>200状态码&nbsp;&nbsp;&nbsp;
-                        自定义返回串：<input name="responsechar" type="input" id="responsechar"/>
+                        自定义返回串：<input name="responsechar" type="input" id="responsechar" style="border-radius: 5px;"/>
                     </div>
                 </div>
                 <div class="row">

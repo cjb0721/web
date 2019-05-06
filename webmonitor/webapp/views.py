@@ -19,28 +19,35 @@ def index(request):
             # print("+++++++++++++++")
             # print(request.POST)
             # return HttpResponse("post请求")
-            app_id = request.POST['app_id']
-            host_info_row = Host_info.objects.filter(id=app_id)[0]
-            if not 'start_time' in request.POST or request.POST['start_time'] == '':
-                start_time = int(str(time.time()).split('.')[0]) - 86400 * 3
-                end_time = int(str(time.time()).split('.')[0])
-                user_find = '0'
-                print("-------------")
-                # TODO 绘图
-            else:
-                start_time = int(time.mktime(time.strptime(request.POST['start_time'], '%Y-%m-%d %H:%M:%S')))
-                end_time = int(time.mktime(time.strptime(request.POST['end_time'], '%Y-%m-%d %H:%M:%S')))
-                user_find = '1'
-                print("+++++++++++++")
-                try:
-                    r = 5 / 1
+            try:
+                app_id = request.POST['app_id']
+                host_info_row = Host_info.objects.filter(id=app_id)[0]
+                if not 'start_time' in request.POST or request.POST['start_time'] == '':
+                    start_time = int(str(time.time()).split('.')[0]) - 86400 * 3
+                    end_time = int(str(time.time()).split('.')[0])
+                    user_find = '0'
+                    print("-------------")
                     # TODO 绘图
-                except Exception as e:
-                    info = ['系统提示：', '图型绘制失败,原因(' + str(e) + ')', '/webapp/']
-                    return render(request, 'webapp/error.html', {'show_info': info})
-            return render(request, 'webapp/index.html', {'sys_name': system_name, 'host_info_obj': host_info_obj,
+                else:
+                    # start_time = int(time.mktime(time.strptime(request.POST['start_time'], '%Y-%m-%d %H:%M:%S')))
+                    start_time = request.POST['start_time']
+                    # end_time = int(time.mktime(time.strptime(request.POST['end_time'], '%Y-%m-%d %H:%M:%S')))
+                    end_time = request.POST['end_time']
+                    print(start_time, end_time)
+                    user_find = '1'
+                    print("+++++++++++++")
+                    try:
+                        r = 5 / 1
+                        # TODO 绘图
+                    except Exception as e:
+                        info = ['系统提示：', '图型绘制失败,原因(' + str(e) + ')', '/webapp/']
+                        return render(request, 'webapp/error.html', {'show_info': info})
+                return render(request, 'webapp/index.html', {'sys_name': system_name, 'host_info_obj': host_info_obj,
                                                          'host_info_row': host_info_row, 'start_time': start_time,
                                                          'end_time': end_time, 'user_find': user_find})
+            except Exception as e:
+                info = ['系统提示：', str(e), '/webapp/']
+                return render(request, 'webapp/error.html', {'show_info': info})
         else:
             print("======================")
             info = ['系统提示：', '未选择任何业务', '/webapp/']
@@ -55,6 +62,7 @@ def add(request):
         return render(request, 'webapp/add.html', {'IDC': idc_str})
     elif request.method == 'POST':
         # print(request.POST)
+
         appname = request.POST['appname']
         appurl = request.POST['appurl']
         hotice = request.POST['hotice']
@@ -66,12 +74,15 @@ def add(request):
             temp = status
         if 'idc' in request.POST:
             idc = request.POST['idc']
-            host_info_dict = {'app_name': appname, 'url': appurl.encode("utf8"), 'idc': idc, 'alarm_type': hotice, 'alarm_info': temp}
-            print(appname, appurl, hotice, idc, status, responsechar)
-            print(host_info_dict)
-            host = Host_info.objects.create(**host_info_dict)
-            print(host)
-            return redirect(reverse('webapp:index'))
+            host_info_dict = {'app_name': appname, 'url': appurl, 'idc': idc, 'alarm_type': hotice, 'alarm_info': temp}
+            try:
+                host = Host_info.objects.create(**host_info_dict)
+                # print(host)
+                return redirect(reverse('webapp:index'))
+            except Exception as e:
+                info = ['系统提示：', e, '/webapp/']
+                return render(request, 'webapp/error.html', {'show_info': info})
+
         else:
             info = ['系统提示：', '探测点不能为空', '/webapp/']
             return render(request, 'webapp/error.html', {'show_info': info})
