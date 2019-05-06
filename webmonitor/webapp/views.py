@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from .models import *
 import time
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Create your views here.
 
@@ -61,8 +62,6 @@ def add(request):
     if request.method == 'GET':
         return render(request, 'webapp/add.html', {'IDC': idc_str})
     elif request.method == 'POST':
-        # print(request.POST)
-
         appname = request.POST['appname']
         appurl = request.POST['appurl']
         hotice = request.POST['hotice']
@@ -78,7 +77,9 @@ def add(request):
             try:
                 host = Host_info.objects.create(**host_info_dict)
                 # print(host)
-                return redirect(reverse('webapp:index'))
+                # return redirect(reverse('webapp:index'))
+                info = ['系统提示：', '祝贺你，应用添加成功！请返回', '/webapp/']
+                return render(request, 'webapp/error.html', {'show_info': info})
             except Exception as e:
                 info = ['系统提示：', e, '/webapp/']
                 return render(request, 'webapp/error.html', {'show_info': info})
@@ -86,5 +87,30 @@ def add(request):
         else:
             info = ['系统提示：', '探测点不能为空', '/webapp/']
             return render(request, 'webapp/error.html', {'show_info': info})
+
+
+def list(request):
+    try:
+        app_id = request.GET['app_id']
+        start_time = request.GET['start_time']
+        end_time = request.GET['end_time']
+        print(app_id, start_time, end_time)
+        # print(type(Monitor_data.objects.filter(fid=app_id)[0]))
+        # contact_list = Monitor_data.objects.filter(fid=app_id).filter(datetime__gte=start_time).filter(datetime__lte=end_time).order_by("-datetime")
+        contact_list = Monitor_data.objects.filter(fid=app_id).order_by("-datetime")
+        # print("====================>", contact_list)
+        # 分页
+        pageinator = Paginator(contact_list, 4)
+        num = request.GET.get('page')
+        try:
+            page = pageinator.page(num)
+        except PageNotAnInteger:
+            page = pageinator.page(1)
+        except EmptyPage:
+            page = pageinator.page(pageinator.num_pages)
+
+        return render(request, 'webapp/list.html', {'pages': page, 'app_id':app_id,'start_time':start_time,'end_time':end_time})
+    except Exception as e:
+        return render(request, 'webapp/list.html')
 
 

@@ -126,8 +126,10 @@
                                 </div>
 
                             {% endifequal %}
-
-            {% endif %}
+                            <div class="applist">
+                                <iframe src="{% url 'webapp:list'%}?app_id={{ host_info_row.id }}&start_time={{ start_time }}&end_time={{ end_time }} " frameborder="1" width="100%" height="300px" style="padding: 2px"></iframe>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
