@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>应用监控列表</title>
+
+    <!-- CSS样式 -->
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+
+    <!-- JavaScript代码控制 -->
+    <script src="{% static 'js/jquery-2.1.4.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+</head>
+<body>
+
+    <div class="msg">
+        <div class="title">
+            <!--<div class="col-sm-1">ID/时间(s)</div>-->
+            <div class="col-sm-1">DNS解析时间</div>
+            <div class="col-sm-1">建立连接时间</div>
+            <div class="col-sm-1">准备传输时间</div>
+            <div class="col-sm-1">开始传输时间</div>
+            <div class="col-sm-1">传输总时间(s)</div>
+            <div class="col-sm-1">HTTP状态</div>
+            <div class="col-sm-2">下载数据包大小(byte)</div>
+            <div class="col-sm-2">平均下载速度(byte/s)</div>
+            <div class="col-sm-2">探测时间(年 / 月 / 日)</div>
+        </div>
+        <div class="bottom">
+            <div class="infolist">
+                {% for p in pages %}
+                    <!--<div class="col-sm-1">{{p.id}}</div>-->
+                    <div class="col-sm-1">{{p.dns_lookup_time}}</div>
+                    <div class="col-sm-1">{{p.connect_time}}</div>
+                    <div class="col-sm-1">{{p.pre_transfer_time}}</div>
+                    <div class="col-sm-1">{{p.start_transfer_time}}</div>
+                    <div class="col-sm-1">{{p.total_time}}</div>
+                    <div class="col-sm-1">{{p.http_status}}</div>
+                    <div class="col-sm-2">{{p.size_download}}</div>
+                    <div class="col-sm-2">{{p.download_speed}}</div>
+                    <div class="col-sm-2">{{p.datetime|date:'Y-m-d'}}</div>
+                {% endfor %}
+            </div>
+            <div class="pagination">
+                {% if pages.has_previous %}
+                    <a href="?page={{ pages.previous_page_number }}&app_id={{ app_id }}&start_time={{ start_time }}&end_time={{ end_time }}" aria-label="Previous">
+                        <span aria-hidden="true"><<</span>
+                    </a>
+                {% endif %}
+                <a href="?page=1&app_id={{ app_id }}&start_time={{ start_time }}&end_time={{ end_time }}">[首页]</a>
+                {% for pg in pages.paginator.page_range %}
+                    {% if pages.number == pg %}
+                        <span style="color: red">{{ pg }}</span>
+                    {% else %}
+                        <a href="?page={{ pg }}&app_id={{ app_id }}&start_time={{ start_time }}&end_time={{ end_time }}">{{ pg }}</a>
+                    {% endif %}
+                {% endfor %}
+                <a href="?page={{ pages.paginator.num_pages }}&app_id={{ app_id }}&start_time={{ start_time }}&end_time={{ end_time }}">[尾页]</a>
+                {% if pages.has_next %}
+                    <a href="?page={{ pages.next_page_number }}&app_id={{ app_id }}&start_time={{ start_time }}&end_time={{ end_time }}" aria-label="Next">
+                        <span aria-hidden="true">>></span>
+                    </a>
+                    <span>共 {{ pages.paginator.num_pages }} 页</span>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

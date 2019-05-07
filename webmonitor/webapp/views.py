@@ -94,13 +94,13 @@ def list(request):
         app_id = request.GET['app_id']
         start_time = request.GET['start_time']
         end_time = request.GET['end_time']
-        print(app_id, start_time, end_time)
+        # print(app_id, start_time, end_time)
         # print(type(Monitor_data.objects.filter(fid=app_id)[0]))
         # contact_list = Monitor_data.objects.filter(fid=app_id).filter(datetime__gte=start_time).filter(datetime__lte=end_time).order_by("-datetime")
         contact_list = Monitor_data.objects.filter(fid=app_id).order_by("-datetime")
         # print("====================>", contact_list)
         # 分页
-        pageinator = Paginator(contact_list, 4)
+        pageinator = Paginator(contact_list, 5)
         num = request.GET.get('page')
         try:
             page = pageinator.page(num)
