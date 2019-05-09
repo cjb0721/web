@@ -1,0 +1,17 @@
+[class^='col-']{
+    background-color: #cccccc;
+    color: #808080;
+    font-weight: bold;
+    text-align: center;
+}
+[class='infolist'] [class^='col-']{
+    border: 2px solid lightgray;
+    line-height: 30px;
+    /*text-align: center;*/
+    margin-top: 2px;
+    color: #ffffff;
+}
+[class='pagination']{
+    float: right;
+    margin-right: 10px;
+}

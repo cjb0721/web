@@ -1,11 +1,11 @@
-
 # -*- coding:UTF-8 -*-
 
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from django.conf import settings
 from .models import *
-import time
+import time, pycurl
+from . import webprobe
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Create your views here.
@@ -26,6 +26,8 @@ def index(request):
             try:
                 app_id = request.POST['app_id']
                 host_info_row = Host_info.objects.filter(id=app_id)[0]
+                # print (host_info_row.url)
+                webprobe.probe(host_info_row.url)
                 if not 'start_time' in request.POST or request.POST['start_time'] == '':
                     start_time = int(str(time.time()).split('.')[0]) - 86400 * 3
                     end_time = int(str(time.time()).split('.')[0])

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} 基础模板页 {% endblock %}</title>
+    <!-- CSS样式 -->
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block link_css %}{% endblock %}
+    <!-- JavaScript代码控制 -->
+    <script src="{% static 'js/jquery-2.1.4.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    {% block link_js %}{% endblock %}
+
+</head>
+<body>
+    <div class="container">
+        <div class="row title">
+            <div class="col-md-12"><h2>业务质量监控</h2></div>
+        </div>
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>

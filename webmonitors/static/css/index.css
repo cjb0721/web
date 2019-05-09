@@ -1,0 +1,42 @@
+div.container .content{
+    background-color: skyblue;
+    border: 1px solid lightgray;
+}
+.content .forms{
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content .bottom_title{
+    height: 38px;
+    background-color: #808080;
+    color: white;
+    border: 1px solid gray;
+}
+.content .bottom_title img{
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px; 
+}
+.content .bottom_title h5{
+    font-weight: bold;
+    font-size: 15px;
+}
+.content .update img, .content .update h5{
+    position: relative;
+    left: -60%;
+}
+.content .bottom_body{
+    padding: 2px;
+    height: 380px;
+}
+.content .bottom_body img{
+    border: 1px solid grey;
+    width: 100%;
+    /*float: left;*/
+}
+.content .bottom_body .child_right img{
+    padding: 8px;
+}
+

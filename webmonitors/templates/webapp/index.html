@@ -1,0 +1,173 @@
+{% extends 'webapp/base.html' %}
+{% block title %}主页{% endblock %}
+
+{% block link_css %}
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-push-1">
+                <div class="content">
+                    <div class="forms">
+                        <form action="{% url 'webapp:index' %}" method="post">
+                            {% csrf_token %}
+                            <span style="margin-right: 50px"></span>
+                            选择业务：
+                            <select name="app_id" id="app_id" style="margin-right: 50px">
+                                {% for h in host_info_obj %}
+                                    <option value="{{h.id}}"> {{ h.app_name }} </option>
+                                {% empty %}
+                                    <option value=""> NULL </option>
+                                {% endfor %}
+                            </select>
+                            <!--起始时间：<input type="datetime-local" name="start_time" id="start_time" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2010-11-18 00:00:00'})">-->
+                            起始时间：<input type="datetime-local" name="start_time" id="start_time">
+                            <!--结束时间：<input type="datetime-local" name="end_time" id="end_time" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2010-11-18 00:00:00'})">&nbsp;&nbsp;-->
+                            结束时间：<input type="datetime-local" name="end_time" id="end_time">&nbsp;&nbsp;
+                            <input type="submit" value="提交">
+                            <a href="{% url 'webapp:add' %}">添加应用</a>
+                        </form>
+                     </div>
+                    <div class="bottom">
+                        {% if host_info_row %}
+                            {% ifequal user_find '1' %}
+                                <div class="bottom_title">
+
+                                    <img src="{% static 'img/chart.png' %}" alt="图片加载失败">
+                                    <h5>{{ host_info_row.app_name }} - <span>监测数据图表</span><span>[自定义]</span></h5>
+
+                                </div>
+
+                                <div class="bottom_body">
+
+                                    <div class="child_left" style="width: 60%; float: left">
+                                        <img src="{% static 'img/qq_time.png' %}" alt="图片加载失败">
+                                    </div>
+                                    <div class="child_right" style="width: 40%; float: left;">
+
+                                        <div class="child_right_up">
+                                            <img src="{% static 'img/qq_download.png' %}" alt="图片加载失败">
+                                        </div>
+                                        <div class="child_right_down">
+                                            <img src="{% static 'img/qq_unavailable.png' %}" alt="图片加载失败">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            {% else %}
+                                <div class="bottom_title">
+
+                                    <img src="{% static 'img/chart.png' %}" alt="图片加载失败">
+                                    <h5>{{ host_info_row.app_name }} - <span>监测数据图表</span><span>[当前]</span></h5>
+
+                                </div>
+
+                                <div class="bottom_body">
+
+                                    <div class="child_left" style="width: 60%; float: left">
+                                        <img src="{% static 'img/qq_time.png' %}" alt="图片加载失败">
+                                    </div>
+                                    <div class="child_right" style="width: 40%; float: left;">
+
+                                        <div class="child_right_up">
+                                            <img src="{% static 'img/qq_download.png' %}" alt="图片加载失败">
+                                        </div>
+                                        <div class="child_right_down">
+                                            <img src="{% static 'img/qq_unavailable.png' %}" alt="图片加载失败">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="bottom_title update">
+
+                                    <img src="{% static 'img/chart.png' %}" alt="图片加载失败">
+                                    <h5>{{ host_info_row.app_name }} - <span>监测数据图表</span><span>[日]</span></h5>
+
+                                </div>
+
+                                <div class="bottom_body">
+
+                                    <div class="child_left" style="width: 60%; float: left">
+                                        <img src="{% static 'img/qq_time.png' %}" alt="图片加载失败">
+                                    </div>
+                                    <div class="child_right" style="width: 40%; float: left;">
+
+                                        <div class="child_right_up">
+                                            <img src="{% static 'img/qq_download.png' %}" alt="图片加载失败">
+                                        </div>
+                                        <div class="child_right_down">
+                                            <img src="{% static 'img/qq_unavailable.png' %}" alt="图片加载失败">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="bottom_title update">
+
+                                    <img src="{% static 'img/chart.png' %}" alt="图片加载失败">
+                                    <h5>{{ host_info_row.app_name }} - <span>监测数据图表</span><span>[月]</span></h5>
+
+                                </div>
+
+                                <div class="bottom_body">
+
+                                    <div class="child_left" style="width: 60%; float: left">
+                                        <img src="{% static 'img/qq_time.png' %}" alt="图片加载失败">
+                                    </div>
+                                    <div class="child_right" style="width: 40%; float: left;">
+
+                                        <div class="child_right_up">
+                                            <img src="{% static 'img/qq_download.png' %}" alt="图片加载失败">
+                                        </div>
+                                        <div class="child_right_down" style="float: none;">
+                                            <img src="{% static 'img/qq_unavailable.png' %}" alt="图片加载失败">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="bottom_title update">
+
+                                    <img src="{% static 'img/chart.png' %}" alt="图片加载失败">
+                                    <h5>{{ host_info_row.app_name }} - <span>监测数据图表</span><span>[年]</span></h5>
+
+                                </div>
+
+                                <div class="bottom_body">
+
+                                    <div class="child_left" style="width: 60%; float: left">
+                                        <img src="{% static 'img/qq_time.png' %}" alt="图片加载失败">
+                                    </div>
+                                    <div class="child_right" style="width: 40%; float: left;">
+
+                                        <div class="child_right_up">
+                                            <img src="{% static 'img/qq_download.png' %}" alt="图片加载失败">
+                                        </div>
+                                        <div class="child_right_down">
+                                            <img src="{% static 'img/qq_unavailable.png' %}" alt="图片加载失败">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            {% endifequal %}
+                            <div class="applist">
+                                <iframe src="{% url 'webapp:list'%}?app_id={{ host_info_row.id }}&start_time={{ start_time }}&end_time={{ end_time }} " frameborder="1" width="100%" height="300px" style="padding: 2px"></iframe>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
