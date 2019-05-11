@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <script src="{% static 'js/jquery-2.1.4.js' %}"></script>
+    <script>
+
+        $(function () {
+            $('#username').blur(function () {
+                console.log("+++")
+                $.ajax({
+                    url: '/webapp/checkuser/',
+                    type: 'post',
+                    data: {
+                        "csrfmiddlewaretoken": $("input[name=csrfmiddlewaretoken]").val(),
+                        "username": $("#username").val()
+                    },
+                    success: function (data) {
+                        console.log("+++")
+                        console.log(data)
+                        $('#userinfo').text(data);
+                    }
+                })
+            })
+
+            $('#verifycode').click(function () {
+                t = new Date()
+                this.src = '/webapp/verifycode/?t='+t.getTime()
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <img src="{% static 'img/dl_01.png' %}" alt="">
+            <div class="row_login">
+                <dl>
+
+                    <form action="{% url 'webapp:login' %}" method="post">
+
+                        {% csrf_token %}
+
+                        <dt><h1>登录</h1></dt>
+                        <dd>
+                            <input type="text" name="username" id="username" placeholder="用户名/手机号"> <span id="userinfo" style="position: fixed; margin-left: 5px;line-height: 50px"></span>
+                        </dd>
+                        <dd>
+                            <input type="password" name="password" id="password" placeholder="密码">
+                        </dd>
+                        <dd>
+                            <input type="text" name="verify" placeholder="验证码" />
+                            <a href="#"><img src="{% url 'webapp:verifycode' %}" alt="验证码加载失败" id="verifycode"></a>
+                        </dd>
+                        <dd>
+                            <button type="submit">立即登录</button>
+                        </dd>
+                        <dd>
+                            <a href="#" id="find_pass">忘记密码？<span>点击找回</span></a>
+                        </dd>
+
+                    </form>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
