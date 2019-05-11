@@ -9,7 +9,7 @@ from django.db import models
 class Host_info(models.Model):
     app_name = models.CharField(max_length=40)
     url = models.CharField(max_length=100)
-    idc = models.CharField(max_length=3)
+    idc = models.CharField(max_length=4)
     alarm_type = models.CharField(max_length=8)
     alarm_info = models.CharField(max_length=30)
 

@@ -33,11 +33,11 @@
             <div class="infolist">
                 {% for p in pages %}
                     <!--<div class="col-sm-1">{{p.id}}</div>-->
-                    <div class="col-sm-1">{{p.dns_lookup_time}}</div>
-                    <div class="col-sm-1">{{p.connect_time}}</div>
-                    <div class="col-sm-1">{{p.pre_transfer_time}}</div>
-                    <div class="col-sm-1">{{p.start_transfer_time}}</div>
-                    <div class="col-sm-1">{{p.total_time}}</div>
+                    <div class="col-sm-1">{{p.dns_lookup_time|floatformat:"2"}}</div>
+                    <div class="col-sm-1">{{p.connect_time|floatformat:"2"}}</div>
+                    <div class="col-sm-1">{{p.pre_transfer_time|floatformat:"2"}}</div>
+                    <div class="col-sm-1">{{p.start_transfer_time|floatformat:"2"}}</div>
+                    <div class="col-sm-1">{{p.total_time|floatformat:"2"}}</div>
                     <div class="col-sm-1">{{p.http_status}}</div>
                     <div class="col-sm-2">{{p.size_download}}</div>
                     <div class="col-sm-2">{{p.download_speed}}</div>

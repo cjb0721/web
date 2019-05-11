@@ -27,7 +27,7 @@ def index(request):
                 app_id = request.POST['app_id']
                 host_info_row = Host_info.objects.filter(id=app_id)[0]
                 # print (host_info_row.url)
-                webprobe.probe(host_info_row.url)
+                webprobe.probe(host_info_row.url, app_id)
                 if not 'start_time' in request.POST or request.POST['start_time'] == '':
                     start_time = int(str(time.time()).split('.')[0]) - 86400 * 3
                     end_time = int(str(time.time()).split('.')[0])
