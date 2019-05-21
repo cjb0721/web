@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding:UTF-8 -*-
 from __future__ import unicode_literals
 
 from django.shortcuts import render
@@ -59,13 +59,6 @@ def Graphrrd_normal(_id, url, appname):
             rrdfiletype[1]) + '.png'
         unavailable_pngpath = settings.PNG_PATH + '/' + Appdomain + '/' + str(datetype) + '_' + str(_id) + '_' + str(
             rrdfiletype[2]) + '.png'
-
-        print ("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+")
-        print (time_pngpath)
-        print (download_pngpath)
-        print (unavailable_pngpath)
-        print ("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+")
-
 
         try:
             os.system("/bin/bash  " + settings.MAINAPP_PATH + '/graphrrd.sh ' + str(time_rrdpath) + ' ' + str(
@@ -398,77 +391,79 @@ def getID(url):
 
 def create_rrd(url):
     URL = url
+    print ("########################################")
+    print (URL)
+    print ("########################################")
     domain = GetURLdomain(url)
     HID = []
     cur_time = str(int(time.time()))
 
     HID = getID(URL)
+    print (HID)
     for id in HID:
+        print (id)
         try:
-            rrd_time = rrdtool.create(settings.RRD_PATH + '/' + str(domain) + '/' + str(id) + \
-                                      '_time.rrd', '--step', '300', '--start', cur_time,
-                                      'DS:NAMELOOKUP_TIME:GAUGE:600:0:U',
-                                      'DS:CONNECT_TIME:GAUGE:600:0:U',
-                                      'DS:PRETRANSFER_TIME:GAUGE:600:0:U',
-                                      'DS:STARTTRANSFER_TIME:GAUGE:600:0:U',
-                                      'DS:TOTAL_TIME:GAUGE:600:0:U',
-                                      'RRA:AVERAGE:0.5:1:600',
-                                      'RRA:AVERAGE:0.5:6:700',
-                                      'RRA:AVERAGE:0.5:24:775',
-                                      'RRA:AVERAGE:0.5:288:797',
-                                      'RRA:MAX:0.5:1:600',
-                                      'RRA:MAX:0.5:6:700',
-                                      'RRA:MAX:0.5:24:775',
-                                      'RRA:MAX:0.5:444:797',
-                                      'RRA:MIN:0.5:1:600',
-                                      'RRA:MIN:0.5:6:700',
-                                      'RRA:MIN:0.5:24:775',
-                                      'RRA:MIN:0.5:444:797')
+            # print ('-------------------->>', '<<---------------------')
+            rrd_time = rrdtool.create((settings.RRD_PATH + '/' + str(domain) + '/' + str(id) + '_time.rrd').encode('utf-8'),
+                                      str('--step'), str('300'), str('--start'), cur_time,
+                                      str('DS:NAMELOOKUP_TIME:GAUGE:600:0:U'),
+                                      str('DS:CONNECT_TIME:GAUGE:600:0:U'),
+                                      str('DS:PRETRANSFER_TIME:GAUGE:600:0:U'),
+                                      str('DS:STARTTRANSFER_TIME:GAUGE:600:0:U'),
+                                      str('DS:TOTAL_TIME:GAUGE:600:0:U'),
+                                      str('RRA:AVERAGE:0.5:1:600'),
+                                      str('RRA:AVERAGE:0.5:6:700'),
+                                      str('RRA:AVERAGE:0.5:24:775'),
+                                      str('RRA:AVERAGE:0.5:288:797'),
+                                      str('RRA:MAX:0.5:1:600'),
+                                      str('RRA:MAX:0.5:6:700'),
+                                      str('RRA:MAX:0.5:24:775'),
+                                      str('RRA:MAX:0.5:444:797'),
+                                      str('RRA:MIN:0.5:1:600'),
+                                      str('RRA:MIN:0.5:6:700'),
+                                      str('RRA:MIN:0.5:24:775'),
+                                      str('RRA:MIN:0.5:444:797'))
             if rrd_time:
                 logging.error(rrdtool.error())
 
-            rrd_download = rrdtool.create(settings.RRD_PATH + '/' + str(domain) + '/' + str(id) + \
-                                          '_download.rrd', '--step', '300', '--start', cur_time,
-                                          'DS:SPEED_DOWNLOAD:GAUGE:600:0:U',
-                                          'RRA:AVERAGE:0.5:1:600',
-                                          'RRA:AVERAGE:0.5:6:700',
-                                          'RRA:AVERAGE:0.5:24:775',
-                                          'RRA:AVERAGE:0.5:288:797',
-                                          'RRA:MAX:0.5:1:600',
-                                          'RRA:MAX:0.5:6:700',
-                                          'RRA:MAX:0.5:24:775',
-                                          'RRA:MAX:0.5:444:797',
-                                          'RRA:MIN:0.5:1:600',
-                                          'RRA:MIN:0.5:6:700',
-                                          'RRA:MIN:0.5:24:775',
-                                          'RRA:MIN:0.5:444:797')
+            rrd_download = rrdtool.create(str(settings.RRD_PATH + '/' + str(domain) + '/' + str(id) + '_download.rrd'),
+                                          str('--step'), str('300'), str('--start'), cur_time,
+                                          str('DS:SPEED_DOWNLOAD:GAUGE:600:0:U'),
+                                          str('RRA:AVERAGE:0.5:1:600'),
+                                          str('RRA:AVERAGE:0.5:6:700'),
+                                          str('RRA:AVERAGE:0.5:24:775'),
+                                          str('RRA:AVERAGE:0.5:288:797'),
+                                          str('RRA:MAX:0.5:1:600'),
+                                          str('RRA:MAX:0.5:6:700'),
+                                          str('RRA:MAX:0.5:24:775'),
+                                          str('RRA:MAX:0.5:444:797'),
+                                          str('RRA:MIN:0.5:1:600'),
+                                          str('RRA:MIN:0.5:6:700'),
+                                          str('RRA:MIN:0.5:24:775'),
+                                          str('RRA:MIN:0.5:444:797'))
             if rrd_download:
                 logging.error(rrdtool.error())
 
-            rrd_unavailable = rrdtool.create(settings.RRD_PATH + '/' + str(domain) + '/' + str(id) + '_unavailable.rrd',
-                                             '--step', '300', '--start', cur_time, \
-                                             'DS:UNAVAILABLE:GAUGE:600:0:U',
-                                             'RRA:AVERAGE:0.5:1:600',
-                                             'RRA:AVERAGE:0.5:6:700',
-                                             'RRA:AVERAGE:0.5:24:775',
-                                             'RRA:AVERAGE:0.5:288:797',
-                                             'RRA:MAX:0.5:1:600',
-                                             'RRA:MAX:0.5:6:700',
-                                             'RRA:MAX:0.5:24:775',
-                                             'RRA:MAX:0.5:444:797',
-                                             'RRA:MIN:0.5:1:600',
-                                             'RRA:MIN:0.5:6:700',
-                                             'RRA:MIN:0.5:24:775',
-                                             'RRA:MIN:0.5:444:797')
+            rrd_unavailable = rrdtool.create(str(settings.RRD_PATH + '/' + str(domain) + '/' + str(id) + '_unavailable.rrd'),
+                                             str('--step'), str('300'), str('--start'), cur_time,
+                                             str('DS:UNAVAILABLE:GAUGE:600:0:U'),
+                                             str('RRA:AVERAGE:0.5:1:600'),
+                                             str('RRA:AVERAGE:0.5:6:700'),
+                                             str('RRA:AVERAGE:0.5:24:775'),
+                                             str('RRA:AVERAGE:0.5:288:797'),
+                                             str('RRA:MAX:0.5:1:600'),
+                                             str('RRA:MAX:0.5:6:700'),
+                                             str('RRA:MAX:0.5:24:775'),
+                                             str('RRA:MAX:0.5:444:797'),
+                                             str('RRA:MIN:0.5:1:600'),
+                                             str('RRA:MIN:0.5:6:700'),
+                                             str('RRA:MIN:0.5:24:775'),
+                                             str('RRA:MIN:0.5:444:797'))
             if rrd_unavailable:
                 logging.error(rrdtool.error())
 
 
-            print (rrd_time)
-            print (rrd_download)
-            print (rrd_unavailable)
-
-        except Exception, e:
+        except Exception as e:
             logging.error('create rrd error!' + str(e))
 
 

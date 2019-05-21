@@ -37,41 +37,41 @@ if [ "$rrdtype" == "time" ]; then
 --lower-limit=0 \
 --base=1024 \
 -u ${ymax} -r  \
-DEF:dns_lookup_time=${rrdfile}:dns_lookup_time:AVERAGE \
-DEF:connect_time=${rrdfile}:connect_time:AVERAGE \
-DEF:pre_transfer_time=${rrdfile}:pre_transfer_time:AVERAGE \
-DEF:start_transfer_time=${rrdfile}:start_transfer_time:AVERAGE \
-DEF:total_time=${rrdfile}:total_time:AVERAGE \
+DEF:NAMELOOKUP_TIME=${rrdfile}:NAMELOOKUP_TIME:AVERAGE \
+DEF:CONNECT_TIME=${rrdfile}:CONNECT_TIME:AVERAGE \
+DEF:PRETRANSFER_TIME=${rrdfile}:PRETRANSFER_TIME:AVERAGE \
+DEF:STARTTRANSFER_TIME=${rrdfile}:STARTTRANSFER_TIME:AVERAGE \
+DEF:TOTAL_TIME=${rrdfile}:TOTAL_TIME:AVERAGE \
 COMMENT:" \n" \
-AREA:total_time#0011ff:总共时间 \
-GPRINT:total_time:LAST:"当前\:%0.2lf %Ss"  \
-GPRINT:total_time:AVERAGE:"平均\:%0.2lf %Ss"  \
-GPRINT:total_time:MAX:"最大\:%0.2lf %Ss"  \
-GPRINT:total_time:MIN:"最小\:%0.2lf %Ss"  \
+AREA:TOTAL_TIME#0011ff:总共时间 \
+GPRINT:TOTAL_TIME:LAST:"当前\:%0.2lf %Ss"  \
+GPRINT:TOTAL_TIME:AVERAGE:"平均\:%0.2lf %Ss"  \
+GPRINT:TOTAL_TIME:MAX:"最大\:%0.2lf %Ss"  \
+GPRINT:TOTAL_TIME:MIN:"最小\:%0.2lf %Ss"  \
 COMMENT:" \n" \
-LINE1:dns_lookup_time#eeee00:域名解析 \
-GPRINT:dns_lookup_time:LAST:"当前\:%0.2lf %Ss"  \
-GPRINT:dns_lookup_time:AVERAGE:"平均\:%0.2lf %Ss"  \
-GPRINT:dns_lookup_time:MAX:"最大\:%0.2lf %Ss"  \
-GPRINT:dns_lookup_time:MIN:"最小\:%0.2lf %Ss"  \
+LINE1:NAMELOOKUP_TIME#eeee00:域名解析 \
+GPRINT:NAMELOOKUP_TIME:LAST:"当前\:%0.2lf %Ss"  \
+GPRINT:NAMELOOKUP_TIME:AVERAGE:"平均\:%0.2lf %Ss"  \
+GPRINT:NAMELOOKUP_TIME:MAX:"最大\:%0.2lf %Ss"  \
+GPRINT:NAMELOOKUP_TIME:MIN:"最小\:%0.2lf %Ss"  \
 COMMENT:" \n" \
-LINE1:connect_time#00aa00:连接时间 \
-GPRINT:connect_time:LAST:"当前\:%0.2lf %Ss"  \
-GPRINT:connect_time:AVERAGE:"平均\:%0.2lf %Ss"  \
-GPRINT:connect_time:MAX:"最大\:%0.2lf %Ss"  \
-GPRINT:connect_time:MIN:"最小\:%0.2lf %Ss"  \
+LINE1:CONNECT_TIME#00aa00:连接时间 \
+GPRINT:CONNECT_TIME:LAST:"当前\:%0.2lf %Ss"  \
+GPRINT:CONNECT_TIME:AVERAGE:"平均\:%0.2lf %Ss"  \
+GPRINT:CONNECT_TIME:MAX:"最大\:%0.2lf %Ss"  \
+GPRINT:CONNECT_TIME:MIN:"最小\:%0.2lf %Ss"  \
 COMMENT:" \n" \
-LINE1:pre_transfer_time#ff5511:开始传输 \
-GPRINT:pre_transfer_time:LAST:"当前\:%0.2lf %Ss"  \
-GPRINT:pre_transfer_time:AVERAGE:"平均\:%0.2lf %Ss"  \
-GPRINT:pre_transfer_time:MAX:"最大\:%0.2lf %Ss"  \
-GPRINT:pre_transfer_time:MIN:"最小\:%0.2lf %Ss"  \
+LINE1:PRETRANSFER_TIME#ff5511:开始传输 \
+GPRINT:PRETRANSFER_TIME:LAST:"当前\:%0.2lf %Ss"  \
+GPRINT:PRETRANSFER_TIME:AVERAGE:"平均\:%0.2lf %Ss"  \
+GPRINT:PRETRANSFER_TIME:MAX:"最大\:%0.2lf %Ss"  \
+GPRINT:PRETRANSFER_TIME:MIN:"最小\:%0.2lf %Ss"  \
 COMMENT:" \n" \
-LINE1:start_transfer_time#004455:第一字节 \
-GPRINT:start_transfer_time:LAST:"当前\:%0.2lf %Ss"  \
-GPRINT:start_transfer_time:AVERAGE:"平均\:%0.2lf %Ss"  \
-GPRINT:start_transfer_time:MAX:"最大\:%0.2lf %Ss"  \
-GPRINT:start_transfer_time:MIN:"最小\:%0.2lf %Ss"  \
+LINE1:STARTTRANSFER_TIME#004455:第一字节 \
+GPRINT:STARTTRANSFER_TIME:LAST:"当前\:%0.2lf %Ss"  \
+GPRINT:STARTTRANSFER_TIME:AVERAGE:"平均\:%0.2lf %Ss"  \
+GPRINT:STARTTRANSFER_TIME:MAX:"最大\:%0.2lf %Ss"  \
+GPRINT:STARTTRANSFER_TIME:MIN:"最小\:%0.2lf %Ss"  \
 COMMENT:" \n" \
 HRULE:${Alarm}#ff0000:"(告警值)" \
 COMMENT:" \n" \
@@ -97,12 +97,12 @@ elif [ "$rrdtype" == "download" ]; then
 --lower-limit=0 \
 --base=1024 \
 -u ${ymax} -r  \
-DEF:download_speed=${rrdfile}:download_speed:AVERAGE \
+DEF:SPEED_DOWNLOAD=${rrdfile}:SPEED_DOWNLOAD:AVERAGE \
 COMMENT:" \n" \
-AREA:download_speed#68CEFF:下载速度 \
-GPRINT:download_speed:AVERAGE:"平均\:%6.0lf%Sbyte"  \
-GPRINT:download_speed:MAX:"最大\:%6.0lf%Sbyte"  \
-GPRINT:download_speed:MIN:"最小\:%6.0lf%Sbyte"  \
+AREA:SPEED_DOWNLOAD#68CEFF:下载速度 \
+GPRINT:SPEED_DOWNLOAD:AVERAGE:"平均\:%6.0lf%Sbyte"  \
+GPRINT:SPEED_DOWNLOAD:MAX:"最大\:%6.0lf%Sbyte"  \
+GPRINT:SPEED_DOWNLOAD:MIN:"最小\:%6.0lf%Sbyte"  \
 COMMENT:" \n"
 
 elif [ "$rrdtype" == "unavailable" ]; then
