@@ -15,7 +15,7 @@
                     <div class="forms">
                         <form action="{% url 'webapp:index' %}" method="post">
                             {% csrf_token %}
-                            <span style="margin-right: 50px"></span>
+                            <span style="margin-right: 20px"></span>
                             选择业务：
                             <select name="app_id" id="app_id" style="margin-right: 50px">
                                 {% for h in host_info_obj %}

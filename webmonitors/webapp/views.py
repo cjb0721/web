@@ -11,6 +11,8 @@ from PIL import Image, ImageFont, ImageDraw
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
+from publicapp.views import *
+
 # Create your views here.
 
 
@@ -36,7 +38,7 @@ def index(request):
                     end_time = int(str(time.time()).split('.')[0])
                     user_find = '0'
                     print("-------------")
-                    # TODO 绘图
+                    Graphrrd_normal(host_info_row.id, host_info_row.url, host_info_row.app_name)
                 else:
                     # start_time = int(time.mktime(time.strptime(request.POST['start_time'], '%Y-%m-%d %H:%M:%S')))
                     start_time = request.POST['start_time']
@@ -46,8 +48,8 @@ def index(request):
                     user_find = '1'
                     print("+++++++++++++")
                     try:
-                        r = 5 / 1
-                        # TODO 绘图
+                        # r = 5 / 1
+                        Graphrrd_custom(host_info_row.id, start_time, end_time, host_info_row.url, host_info_row.app_name)
                     except Exception as e:
                         info = ['系统提示：', '图型绘制失败,原因(' + str(e) + ')', '/webapp/']
                         return render(request, 'webapp/error.html', {'show_info': info})
@@ -58,7 +60,7 @@ def index(request):
                 info = ['系统提示：', str(e), '/webapp/']
                 return render(request, 'webapp/error.html', {'show_info': info})
         else:
-            print("======================")
+            print("======================>None")
             info = ['系统提示：', '未选择任何业务', '/webapp/']
             return render(request, 'webapp/error.html', {'show_info': info})
 
@@ -86,6 +88,22 @@ def add(request):
                 host = Host_info.objects.create(**host_info_dict)
                 # print(host)
                 # return redirect(reverse('webapp:index'))
+
+                try:
+                    if not os.path.isdir(settings.RRD_PATH + '/' + GetURLdomain(appurl)):
+                        os.makedirs(settings.RRD_PATH + '/' + GetURLdomain(appurl))
+
+                    if not os.path.isdir(settings.PNG_PATH + '/' + GetURLdomain(appurl)):
+                        os.makedirs(settings.PNG_PATH + '/' + GetURLdomain(appurl))
+
+                except Exception as e:
+                    return HttpResponse("目录创建失败！" + str(e))
+
+                try:
+                    create_rrd(str(appurl))
+                except Exception as e:
+                    return HttpResponse("目录RRD文件失败！" + str(e))
+
                 info = ['系统提示：', '祝贺你，应用添加成功！请返回', '/webapp/']
                 return render(request, 'webapp/error.html', {'show_info': info})
             except Exception as e:

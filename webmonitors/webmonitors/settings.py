@@ -17,12 +17,25 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 #Global Variable
 SYSTEM_NAME = "分布式质量监控平台 V1.0"
 
 #IDC list
-IDC={'ct':'电信','cnc':'联通','cmcc':'移动'}
+IDC = {'ct':'电信','cnc':'联通','cmcc':'移动'}
+
+#system path
+RRD_PATH = BASE_DIR + "/rrd"
+PNG_PATH = BASE_DIR + "/static/rrdtool"
+MAINAPP_PATH = BASE_DIR + "/webapp"
+
+#rrdtool Alarm value
+TIME_ALARM=1
+
+#rrdtool time Y MAX value
+TIME_YMAX=1
+
+#rrdtool down_speed Y MAX
+DOWN_APEED_YMAX=8388608
 
 
 # Quick-start development settings - unsuitable for production
@@ -47,6 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
+    'publicapp',
 ]
 
 MIDDLEWARE = [

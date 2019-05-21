@@ -32,5 +32,5 @@ class Monitor_data(models.Model):
     download_length = models.FloatField()
     download_speed = models.FloatField()
     datetime = models.DateTimeField(auto_now_add=True, max_length=12)
-    mark = models.CharField(max_length=1)
+    mark = models.IntegerField(default=0)
 

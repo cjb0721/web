@@ -1,0 +1,7 @@
+2019-05-21 09:36:07,187 [WARNING] Not Found: /favicon.ico
+2019-05-21 09:36:30,544 [ERROR] Graphrrd normal rrd png error:'Settings' object has no attribute 'TIME_YMAX'
+2019-05-21 09:36:30,544 [ERROR] Graphrrd normal rrd png error:'Settings' object has no attribute 'TIME_YMAX'
+2019-05-21 09:36:30,544 [ERROR] Graphrrd normal rrd png error:'Settings' object has no attribute 'TIME_YMAX'
+2019-05-21 09:36:30,544 [ERROR] Graphrrd normal rrd png error:'Settings' object has no attribute 'TIME_YMAX'
+2019-05-21 10:24:30,396 [WARNING] Not Found: /webapp//
+2019-05-21 11:30:30,369 [ERROR] create rrd error!Argument 0 must be str or a list of str
