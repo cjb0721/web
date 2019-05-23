@@ -17,7 +17,7 @@ export LANGUAGE=zh_CN.utf8
 export LC_CTYPE=zh_CN.utf8
 export LC_TIME=zh_CN.utf8
 
-if [ "$rrdtype" == "time" ]; then
+if [ "$rrdtype" = "time" ]; then
 /usr/bin/rrdtool graph ${pngfile} -w 500 -h 207 \
 -n TITLE:9:${rrdtool_font_msyhbd} \
 -n UNIT:8:${rrdtool_font_msyh} \
@@ -78,7 +78,7 @@ COMMENT:" \n" \
 COMMENT:" \n" \
 COMMENT:"\t\t\t\t\t\t\t\t\t\t最后更新 \:$(date '+%Y-%m-%d %H\:%M')\n"
 
-elif [ "$rrdtype" == "download" ]; then
+elif [ "$rrdtype" = "download" ]; then
 /usr/bin/rrdtool graph ${pngfile} -w 320 -h 102 \
 -n TITLE:9:${rrdtool_font_msyhbd} \
 -n UNIT:8:${rrdtool_font_msyh} \
@@ -105,7 +105,7 @@ GPRINT:SPEED_DOWNLOAD:MAX:"最大\:%6.0lf%Sbyte"  \
 GPRINT:SPEED_DOWNLOAD:MIN:"最小\:%6.0lf%Sbyte"  \
 COMMENT:" \n"
 
-elif [ "$rrdtype" == "unavailable" ]; then
+elif [ "$rrdtype" = "unavailable" ]; then
 /usr/bin/rrdtool graph ${pngfile}  -w 320 -h 102 \
 -n TITLE:9:${rrdtool_font_msyhbd} \
 -n UNIT:8:${rrdtool_font_msyh} \

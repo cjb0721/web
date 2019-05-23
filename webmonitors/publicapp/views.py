@@ -46,9 +46,9 @@ def Graphrrd_normal(_id, url, appname):
     unavailable_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_' + str(rrdfiletype[2]) + '.rrd'
 
     print ("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+")
-    print (Appdomain, time_rrdpath)
-    print (Appdomain, download_rrdpath)
-    print (Appdomain, unavailable_rrdpath)
+    print (time_rrdpath)
+    print (download_rrdpath)
+    print (unavailable_rrdpath)
     print ("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+")
 
     i = 0
@@ -84,11 +84,13 @@ def Graphrrd_normal(_id, url, appname):
 
 def Graphrrd_custom(_id, _starttime, _endtime, url, appname):
     # 自定义时间查询及生成rrd图表
-    StartTime = _starttime
-    EndTime = _endtime
+    StartTime = _starttime[6:7]
+    EndTime = _endtime[6:7]
+    # print (StartTime[6:7], EndTime)
     # graphrrd user defind
     rrdfiletype = ['time', 'download', 'unavailable']
     Appdomain = str(GetURLdomain(url))
+
     time_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_time.rrd'
     download_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_download.rrd'
     unavailable_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_unavailable.rrd'
@@ -96,17 +98,20 @@ def Graphrrd_custom(_id, _starttime, _endtime, url, appname):
     time_pngpath = settings.PNG_PATH + '/' + Appdomain + '/' + str(_id) + '_time.png'
     download_pngpath = settings.PNG_PATH + '/' + Appdomain + '/' + str(_id) + '_download.png'
     unavailable_pngpath = settings.PNG_PATH + '/' + Appdomain + '/' + str(_id) + '_unavailable.png'
+
     try:
-        os.system("/bin/sh  " + settings.MAINAPP_PATH + '/graphrrd.sh ' + str(time_rrdpath) + ' ' + str(
+        os.system("/bin/bash  " + settings.MAINAPP_PATH + '/graphrrd.sh ' + str(time_rrdpath) + ' ' + str(
             time_pngpath) + ' ' + 'time' + ' ' + appname.encode('utf-8') + ' ' + str(StartTime) + ' ' + str(
             EndTime) + ' ' + str(settings.TIME_YMAX) + ' ' + str(settings.TIME_ALARM))
-        os.system("/bin/sh  " + settings.MAINAPP_PATH + '/graphrrd.sh ' + str(download_rrdpath) + ' ' + str(
+        os.system("/bin/bash  " + settings.MAINAPP_PATH + '/graphrrd.sh ' + str(download_rrdpath) + ' ' + str(
             download_pngpath) + ' ' + 'download' + ' ' + appname.encode('utf-8') + ' ' + str(StartTime) + ' ' + str(
             EndTime) + ' ' + str(settings.DOWN_APEED_YMAX))
-        os.system("/bin/sh  " + settings.MAINAPP_PATH + '/graphrrd.sh ' + str(unavailable_rrdpath) + ' ' + str(
+        os.system("/bin/bash  " + settings.MAINAPP_PATH + '/graphrrd.sh ' + str(unavailable_rrdpath) + ' ' + str(
             unavailable_pngpath) + ' ' + 'unavailable' + ' ' + appname.encode('utf-8') + ' ' + str(
             StartTime) + ' ' + str(EndTime))
+
     except Exception as e:
+
         logging.error('Graphrrd custom rrd png error:' + str(e))
         return
 

@@ -51,17 +51,17 @@ def index(request):
                         # r = 5 / 1
                         Graphrrd_custom(host_info_row.id, start_time, end_time, host_info_row.url, host_info_row.app_name)
                     except Exception as e:
-                        info = ['系统提示：', '图型绘制失败,原因(' + str(e) + ')', '/webapp/']
+                        info = ['系统提示：', '图型绘制失败,原因(' + str(e) + ')', '/webapp/index']
                         return render(request, 'webapp/error.html', {'show_info': info})
                 return render(request, 'webapp/index.html', {'sys_name': system_name, 'host_info_obj': host_info_obj,
                                                          'host_info_row': host_info_row, 'start_time': start_time,
                                                          'end_time': end_time, 'user_find': user_find})
             except Exception as e:
-                info = ['系统提示：', str(e), '/webapp/']
+                info = ['系统提示：', str(e), '/webapp/index']
                 return render(request, 'webapp/error.html', {'show_info': info})
         else:
             print("======================>None")
-            info = ['系统提示：', '未选择任何业务', '/webapp/']
+            info = ['系统提示：', '未选择任何业务', '/webapp/index']
             return render(request, 'webapp/error.html', {'show_info': info})
 
 
@@ -104,14 +104,14 @@ def add(request):
                 except Exception as e:
                     return HttpResponse("目录RRD文件失败！" + str(e))
 
-                info = ['系统提示：', '祝贺你，应用添加成功！请返回', '/webapp/']
+                info = ['系统提示：', '祝贺你，应用添加成功！请返回', '/webapp/index']
                 return render(request, 'webapp/error.html', {'show_info': info})
             except Exception as e:
-                info = ['系统提示：', e, '/webapp/']
+                info = ['系统提示：', e, '/webapp/index']
                 return render(request, 'webapp/error.html', {'show_info': info})
 
         else:
-            info = ['系统提示：', '探测点不能为空', '/webapp/']
+            info = ['系统提示：', '探测点不能为空', '/webapp/index']
             return render(request, 'webapp/error.html', {'show_info': info})
 
 

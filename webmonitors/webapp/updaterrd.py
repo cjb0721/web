@@ -45,11 +45,17 @@ class UpdateRRD():
 
     # 更新rrd文件
     def updateRRD(self, rowobj):
-        if str(rowobj["HTTP_CODE"]) == "200":
+        print ("==========================>>>updateRRD", rowobj.http_status)
+        if str(rowobj.http_status) == "200":
             unavailablevalue = 0
         else:
             unavailablevalue = 1
-        FID = rowobj["FID"]
+        FID = rowobj.fid.id
+
+        print ("++++++++++++++++++++++++++++++++++++++")
+        print (unavailablevalue)
+        print (rowobj.fid.id)
+        print ("++++++++++++++++++++++++++++++++++++++")
 
         time_rrdpath = config.RRD_PATH + '/' + str(self.getURL(FID)) + '/' + str(FID) + '_' + str(self.rrdfiletype[0]) + '.rrd'
         download_rrdpath = config.RRD_PATH + '/' + str(self.getURL(FID)) + '/' + str(FID) + '_' + str(
@@ -57,13 +63,31 @@ class UpdateRRD():
         unavailable_rrdpath = config.RRD_PATH + '/' + str(self.getURL(FID)) + '/' + str(FID) + '_' + str(
             self.rrdfiletype[2]) + '.rrd'
 
+        print (FID)
+        print (time_rrdpath)
+        print (download_rrdpath)
+        print (unavailable_rrdpath)
+
         try:
-            rrdtool.updatev(time_rrdpath, '%s:%s:%s:%s:%s:%s' % (
-            str(rowobj["DATETIME"]), str(rowobj["NAMELOOKUP_TIME"]), str(rowobj["CONNECT_TIME"]),
-            str(rowobj["PRETRANSFER_TIME"]), str(rowobj["STARTTRANSFER_TIME"]), str(rowobj["TOTAL_TIME"])))
-            rrdtool.updatev(download_rrdpath, '%s:%s' % (str(rowobj["DATETIME"]), str(rowobj["SPEED_DOWNLOAD"])))
-            rrdtool.updatev(unavailable_rrdpath, '%s:%s' % (str(rowobj["DATETIME"]), str(unavailablevalue)))
-            self.setMARK(rowobj["ID"])
+            temp = rrdtool.updatev(time_rrdpath, '%s:%s:%s:%s:%s:%s' % (
+            str(rowobj.datetime), str(rowobj.dns_lookup_time), str(rowobj.connect_time),
+            str(rowobj.pre_transfer_time), str(rowobj.start_transfer_time), str(rowobj.total_time)))
+
+            temp1 = rrdtool.updatev(download_rrdpath, '%s:%s' % (str(rowobj.datetime), str(rowobj.download_speed)))
+            temp2 = rrdtool.updatev(unavailable_rrdpath, '%s:%s' % (str(rowobj.datetime), str(unavailablevalue)))
+
+            self.setMARK(rowobj.id)
+
+            print("------------------------------------------------------------>>")
+            print (temp)
+            print (temp1)
+            print (temp2)
+            print("------------------------------------------------------------>>")
+
+            print (str(rowobj.datetime), str(rowobj.dns_lookup_time), str(rowobj.connect_time),
+            str(rowobj.pre_transfer_time), str(rowobj.start_transfer_time), str(rowobj.total_time))
+            # print (rowobj.size_header)
+
         except Exception, e:
             logging.error('Update rrd error:' + str(e))
 
@@ -82,24 +106,29 @@ class UpdateRRD():
 
     # 获取未标志的新记录
     def getNewdata(self):
+        print ("===================>>>getNewdata")
         try:
-            monitor = Monitor_data.objects.filter(mark=0).all()
+            monitor = Monitor_data.objects.filter(mark=0)
+            print ("===================>>>monitor", monitor)
             for row in monitor:
+                print (row.mark)
                 self.updateRRD(row)
 
             # self.cursor.execute(
             #     "select ID,FID,NAMELOOKUP_TIME,CONNECT_TIME,PRETRANSFER_TIME,STARTTRANSFER_TIME,TOTAL_TIME,HTTP_CODE,SPEED_DOWNLOAD,DATETIME from webmonitor_monitordata where MARK='0'")
             # for row in self.cursor.fetchall():
             #     self.updateRRD(row)
-        except Exception, e:
+        except Exception as e:
+            print ("ERROR1")
             logging.error('Get new database  error:' + str(e))
 
     # 获取域名
     def getURL(self, _id):
         try:
-
+            print ("=========================>>>getURL", _id)
             host = Host_info.objects.get(pk=_id)
             url = host.url
+            print (url)
             return self.GetURLdomain(url)
 
             # self.cursor.execute("select URL from webmonitor_hostinfo where ID='%s'" % (_id))
@@ -110,8 +139,8 @@ class UpdateRRD():
     # 获取URL域名
     def GetURLdomain(self, url):
         xurl = ""
-        if url[:7] == "http://":
-            xurl = url[7:]
+        if url[:8] == "https://":
+            xurl = url[8:]
         else:
             xurl = url
         return string.split(xurl, '/')[0]
