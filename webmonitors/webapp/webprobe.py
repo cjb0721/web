@@ -9,6 +9,7 @@ from django.conf import settings
 
 def probe(url, id):
     # URL = 'https://www.baidu.com/'  # 探测的目标URL
+    # print ("------------------------------------->>>>>>", url)
     URL = url  # 探测的目标URL
     c = pycurl.Curl()  # 创建一个Curl对象
     c.setopt(pycurl.URL, URL)  # 定义请求的URL常量

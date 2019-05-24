@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 
 import string, re, os
-import time, datetime
+import time, random, datetime
 import logging
 import rrdtool
 from decimal import Decimal
@@ -39,8 +39,15 @@ def Graphrrd_normal(_id, url, appname):
     GraphDate = ['current', 'day', 'month', 'year']
     GraphStart = ['-3h', '-1day', '-1month', '-1year']
     GraphEnd = ['now', 'now', 'now', 'now']
+    rrdRandom = {'www.baidu.com': [17, 18], 'www.jd.com': [21, 22], 'www.qq.com': [14, 15, 16], 'www.taobao.com': [19, 20]}
+    rrdDict = {}
 
     Appdomain = str(GetURLdomain(url))
+    result = random.choice(rrdRandom[Appdomain])
+    rrdDict['url'] = Appdomain
+    rrdDict['num'] = result
+    # print (result, type(result))
+
     time_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_' + str(rrdfiletype[0]) + '.rrd'
     download_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_' + str(rrdfiletype[1]) + '.rrd'
     unavailable_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_' + str(rrdfiletype[2]) + '.rrd'
@@ -73,6 +80,7 @@ def Graphrrd_normal(_id, url, appname):
         except Exception as e:
             logging.error('Graphrrd normal rrd png error:' + str(e))
         i += 1
+    return rrdDict
 
 
 """
@@ -89,7 +97,18 @@ def Graphrrd_custom(_id, _starttime, _endtime, url, appname):
     # print (StartTime[6:7], EndTime)
     # graphrrd user defind
     rrdfiletype = ['time', 'download', 'unavailable']
+    rrdRandom = {'www.baidu.com': [17, 18], 'www.jd.com': [21, 22], 'www.qq.com': [14, 15, 16],
+                     'www.taobao.com': [19, 20]}
+    rrdDict = {}
     Appdomain = str(GetURLdomain(url))
+    result = random.choice(rrdRandom[Appdomain])
+    if Appdomain == 'www.jd.com':
+        result = 21
+    if Appdomain == 'www.taobao.com':
+        result = 20
+    rrdDict['url'] = Appdomain
+    rrdDict['num'] = result
+
 
     time_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_time.rrd'
     download_rrdpath = settings.RRD_PATH + '/' + Appdomain + '/' + str(_id) + '_download.rrd'
@@ -113,7 +132,8 @@ def Graphrrd_custom(_id, _starttime, _endtime, url, appname):
     except Exception as e:
 
         logging.error('Graphrrd custom rrd png error:' + str(e))
-        return
+
+    return rrdDict
 
 
 """

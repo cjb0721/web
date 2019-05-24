@@ -34,3 +34,5 @@ class Monitor_data(models.Model):
     datetime = models.DateTimeField(auto_now_add=True, max_length=12)
     mark = models.IntegerField(default=0)
 
+    def __str__(self):
+        return "FID: "+str(self.fid.id)

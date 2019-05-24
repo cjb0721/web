@@ -38,24 +38,26 @@ def index(request):
                     end_time = int(str(time.time()).split('.')[0])
                     user_find = '0'
                     print("-------------")
-                    Graphrrd_normal(host_info_row.id, host_info_row.url, host_info_row.app_name)
+                    result = Graphrrd_normal(host_info_row.id, host_info_row.url, host_info_row.app_name)
+                    # print (result, type(result))
                 else:
                     # start_time = int(time.mktime(time.strptime(request.POST['start_time'], '%Y-%m-%d %H:%M:%S')))
                     start_time = request.POST['start_time']
                     # end_time = int(time.mktime(time.strptime(request.POST['end_time'], '%Y-%m-%d %H:%M:%S')))
                     end_time = request.POST['end_time']
-                    print(start_time, end_time)
+                    # print(start_time, end_time)
                     user_find = '1'
                     print("+++++++++++++")
                     try:
                         # r = 5 / 1
-                        Graphrrd_custom(host_info_row.id, start_time, end_time, host_info_row.url, host_info_row.app_name)
+                        result = Graphrrd_custom(host_info_row.id, start_time, end_time, host_info_row.url, host_info_row.app_name)
                     except Exception as e:
                         info = ['系统提示：', '图型绘制失败,原因(' + str(e) + ')', '/webapp/index']
                         return render(request, 'webapp/error.html', {'show_info': info})
                 return render(request, 'webapp/index.html', {'sys_name': system_name, 'host_info_obj': host_info_obj,
                                                          'host_info_row': host_info_row, 'start_time': start_time,
-                                                         'end_time': end_time, 'user_find': user_find})
+                                                         'end_time': end_time, 'user_find': user_find, 'url': str(result['url']),
+                                                             'num': str(result['num'])})
             except Exception as e:
                 info = ['系统提示：', str(e), '/webapp/index']
                 return render(request, 'webapp/error.html', {'show_info': info})
