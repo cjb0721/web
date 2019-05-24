@@ -32,3 +32,138 @@ Traceback (most recent call last):
     raise self.error(token, e)
 TemplateSyntaxError: Could not parse the remainder: 'url']}}/{{result['num']}}_time.png'' from ''rrdtool/{{result['url']}}/{{result['num']}}_time.png''
 2019-05-24 16:31:26,551 [WARNING] Not Found: /favicon.ico
+2019-05-24 18:04:06,624 [WARNING] Not Found: /webapp/find/images/sgl_01.png
+2019-05-24 19:16:01,688 [WARNING] Not Found: /webapp/send/css/index.css
+2019-05-24 19:16:01,696 [WARNING] Not Found: /webapp/send/css/jcss.css
+2019-05-24 19:16:01,733 [WARNING] Not Found: /webapp/send/css/ny.css
+2019-05-24 19:16:01,743 [WARNING] Not Found: /webapp/send/js/jQuery.1.9.1.js
+2019-05-24 19:16:01,748 [WARNING] Not Found: /webapp/send/js/cebianlan.js
+2019-05-24 19:16:01,750 [WARNING] Not Found: /webapp/send/js/Jane-js.js
+2019-05-24 19:16:01,989 [WARNING] Not Found: /webapp/send/images/duanx.png
+2019-05-24 19:16:01,995 [WARNING] Not Found: /webapp/send/images/rh-ico.png
+2019-05-24 19:16:02,001 [WARNING] Not Found: /webapp/send/images/wdzh/J-zhuce-success.png
+2019-05-24 19:16:02,011 [WARNING] Not Found: /webapp/send/images/rh-di.png
+2019-05-24 19:16:02,008 [WARNING] Not Found: /webapp/send/images/sl_01.png
+2019-05-24 19:16:02,017 [WARNING] Not Found: /webapp/send/images/sl_03.png
+2019-05-24 19:16:02,053 [WARNING] Not Found: /webapp/send/images/sl_05.png
+2019-05-24 19:16:02,116 [WARNING] Not Found: /webapp/send/images/J-erweima01.png
+2019-05-24 19:16:02,152 [WARNING] Not Found: /webapp/send/images/sl_29.png
+2019-05-24 19:16:02,172 [WARNING] Not Found: /webapp/send/images/sl_31.png
+2019-05-24 19:16:02,178 [WARNING] Not Found: /webapp/send/images/sl_30.png
+2019-05-24 19:16:02,184 [WARNING] Not Found: /webapp/send/images/sl_32.png
+2019-05-24 19:16:02,188 [WARNING] Not Found: /webapp/send/images/right_weixin.png
+2019-05-24 19:41:11,348 [WARNING] Not Found: /favicon.ico
+2019-05-24 19:41:21,146 [WARNING] Not Found: /webapp/result/images/wdzh/J-zhuce-success.png
+2019-05-24 19:41:36,665 [WARNING] Not Found: /webapp/result/images/wdzh/J-zhuce-success.png
+2019-05-24 19:42:48,848 [WARNING] Not Found: /webapp/result/images/wdzh/J-zhuce-success.png
+2019-05-24 20:19:44,938 [WARNING] Forbidden (CSRF token missing or incorrect.): /webapp/checkuser/
+2019-05-24 20:19:48,733 [WARNING] Forbidden (CSRF token missing or incorrect.): /webapp/checkuser/
+2019-05-24 20:21:00,988 [WARNING] Forbidden (CSRF token missing or incorrect.): /webapp/checkuser/
+2019-05-24 20:21:48,928 [WARNING] Forbidden (CSRF token missing or incorrect.): /webapp/checkuser/
+2019-05-24 20:22:54,346 [ERROR] Internal Server Error: /webapp/checkuser/
+Traceback (most recent call last):
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cjb/Web/web/webmonitors/webapp/views.py", line 175, in checkuser
+    username = request.POST['username']
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'username'"
+2019-05-24 20:24:08,696 [ERROR] Internal Server Error: /webapp/checkuser/
+Traceback (most recent call last):
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cjb/Web/web/webmonitors/webapp/views.py", line 175, in checkuser
+    username = request.POST['username']
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'username'"
+2019-05-24 20:24:19,098 [ERROR] Internal Server Error: /webapp/checkuser/
+Traceback (most recent call last):
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cjb/Web/web/webmonitors/webapp/views.py", line 175, in checkuser
+    username = request.POST['username']
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'username'"
+2019-05-24 20:55:17,177 [ERROR] Internal Server Error: /webapp/send/
+Traceback (most recent call last):
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cjb/Web/web/webmonitors/webapp/views.py", line 234, in send
+    return render(request, 'webapp/sending.html')
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Could not parse the remainder: '\'webapp:success\'' from '\'webapp:success\''
+2019-05-24 20:57:02,168 [ERROR] Internal Server Error: /webapp/send/
+Traceback (most recent call last):
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cjb/Web/web/webmonitors/webapp/views.py", line 234, in send
+    return render(request, 'webapp/sending.html')
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/cjb/Py1901/Env/webenv/local/lib/python2.7/site-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'success' not found. 'success' is not a valid view function or pattern name.
+2019-05-24 21:00:43,348 [WARNING] Not Found: /webapp/send/webapp/sendsuccess.html
+2019-05-24 21:01:37,464 [WARNING] Not Found: /webapp/send/webapp/sendsuccess.html
+2019-05-24 21:01:38,949 [WARNING] Not Found: /webapp/send/webapp/sendsuccess.html
+2019-05-24 21:01:46,460 [WARNING] Not Found: /webapp/success
+2019-05-24 21:02:23,061 [WARNING] Not Found: /webapp/success
+2019-05-24 22:14:15,671 [WARNING] Not Found: /webapp/login/

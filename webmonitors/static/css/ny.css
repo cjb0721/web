@@ -1,0 +1,53 @@
+
+
+/*忘记密码*/
+/* .nav-con{width:1024px;margin:0 auto;}
+ */.J-forgetpassword{background:#fff;margin:40px auto; width:920px;min-height:480px;margin-bottom: 53px; border:1px solid #e5e5e5;}
+.J-forgetpassword h2{font-size:24px;color:#666;margin-bottom:30px;}
+.J-forgetpassword ol li{width:25%;height:70px;line-height:70px;background:#eee;text-align:center;font-size:16px;color:#a8a8a8;float:left;border-right:1px solid #ddd;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-webkit-box:border-box;}
+.J-forgetpassword ol li.J-current{color:#fff;background:#f56868;}
+.J-forgetpassword ul{width:388px;margin:106px auto;}
+.J-fg-list p{width:19%;float:left;text-align:center;height:48px;line-height:48px;color: #606060; font-size:16px;}
+.J-fg-list input{width:80%;float:left;text-indent:8px;height:48px;line-height:48px;border:1px solid #ddd;}
+.J-fg-list span{display:block;float:left;width:113px;height:48px;}
+.J-fg-list span img{width:113px;height:48px;}
+.J-fg-textindent{margin-left:78px;}
+.J-fg-btn a{width:100%;height:48px;line-height:48px;text-align:center;color:#fff!important;background:#f56868;display:block;float:left;}
+.J-fg-yzzh p{width:29% !important;letter-spacing:normal;}
+.J-fg-yzzh input{width:70% !important;}
+.J-fg-ml{margin-left:112px;}
+.J-fg-list a{width:113px;}
+.J-fg-laststep{width:388px;margin:50px auto;font-size:18px;color:#999;}
+.J-fg-laststep dt{width:53px;height:53px;margin-right:10px;}
+.J-fg-laststep dt,.J-fg-laststep dd{float:left;}
+.J-fg-list i{position:absolute;top:0;z-index:2;width:60%;line-height:48px;margin-left:10px;font-style: normal;}
+.J-fg-list i a{color:#f56868;}
+.J-fgp-tishi{width:63%;margin:106px auto;background:url(../images/sgl_02.png) no-repeat 0 center;}
+.J-fgp-tishi p{min-height:70px;line-height:70px;font-size:16px;color:#999;margin-left:90px;}
+.J-fgp-tishi p span{font-size:18px;color:#f56868;}
+.J-email-success{width:50%;margin-bottom:0;}
+.J-email-success p{font-size:34px;padding-top:10px;color:#f78182;}
+.J-es-btn{display:block;width:130px;height:40px;line-height:40px;text-align:center;background:#f78182;color:#fff;margin:40px 0 0 321px;}
+.J-es-btn:hover{color:#fff;}
+.sl_txzh{overflow: hidden;}
+.rci_prompt {
+	color: #FF3030;
+	font-size: 12px;
+	margin-top: 4px;
+}
+.J-btn a{
+	display:block;
+	width:71%;
+	height:48px;
+	line-height:48px;
+	text-align:center;
+	color:#fff !important;
+	font-size:16px;
+	background:#f56868;
+	font-weight:normal;
+	
+}
+.jmt25{  margin-top:25px;}
+.jmb50{ margin-bottom:50px;overflow: hidden;}
+.sl_gx{margin-bottom: 5px;}
+

@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
+body,button,input,select,textarea{font-family: "微软雅黑","MicroSoft YaHei","Arial Narrow","HELVETICA"; font-size:14px; padding:0; margin:0; color:#666;}
+table{border-collapse:collapse;border-spacing:0;}
+ul,li{ margin:0px; padding:0px; list-style:none; }
+img{border:none;}
+h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0; font-weight:normal;}
+a{text-decoration:none; color:#000;}
+html{overflow-x:hidden;-webkit-text-size-adjust:none;}
+
+input{border:none;}
+input,textarea{background:#FFF;outline:none;}
+textarea{overflow-y:auto;}
+
+.clear{clear:both; overflow:hidden;height:1px;margin-top:-1px;font-size:0;}
+.jfl{ float:left}
+.jfr{ float:right}
+body{ background:#f9f9f9;}
+.jw1200{ width:1200px; margin:0 auto;}
+
+
+/* 全局样式 */
+em i{ font-style:normal;}
+.jfl{ float:left;}
+.jfr{ float:right;}
+.brad{
+	-moz-border-radius: 5px; /* Gecko browsers */
+	-webkit-border-radius: 5px;   /* Webkit browsers */
+	border-radius: 5px;/* W3C syntax */
+}
+.boxsize{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.bgfff{ background:#FFF;}
+.boxsha{box-shadow:0px 3px rgba(0, 0, 0, 0.07);}
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+* html .clearfix{zoom:1;} /* IE6 */
+*+html .clearfix{zoom:1;} /* IE7 */
+.cyyj_in_hover { border: 1px solid #d9d9d9;}
+.cyyj_in_hover:hover {border: 1px solid #0097e0;}
+.cyyj_in_hover:focus {border: 1px solid #0097e0;}
+.overflow{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+/*********页码**************/
+  div.black2 {
+	padding: 7px;
+	margin: 30px 0px;
+	text-align: center;
+  }
+  div.black2 a {
+	padding: 2px 10px;
+	margin: 6px;
+	color: #666;
+	text-decoration: none;
+	background: #f2f2f2;
+	border:1px solid #f2f2f2;
+  }
+  div.black2 a:hover{
+	  border:1px solid #f56868;
+  }
+  
+  div.black2 span.current {
+	
+	padding: 2px 10px;
+	margin: 6px;
+	color: #fff;
+	border: 1px solid #f56868;
+	background-color: #f56868;
+  }

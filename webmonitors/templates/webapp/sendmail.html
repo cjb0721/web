@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>邮箱验证</title>
+
+    {% load static from staticfiles %}
+
+    <link rel="stylesheet" href="{% static 'css/jcss.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ny.css' %}">
+
+    <script src="{% static 'js/jquery-2.1.4.js' %}"></script>
+    <script>
+
+        $(function () {
+
+            $('#verifycode').click(function () {
+                t = new Date()
+                this.src = '/webapp/verifycode/?t='+t.getTime()
+            })
+        })
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <div class="J-forgetpassword nav-con jboxsize jborder">
+        <ol>
+            <li>1 填写账号信息</li>
+            <li class="J-current">2 验证邮箱信息</li>
+            <li>3 邮件投递</li>
+            <li style="border:none;">4 成功</li>
+            <div class="jclear"></div>
+        </ol>
+        <div class="clear"></div>
+        <ul>
+            <form action="{% url 'webapp:mail' %}" method="post">
+            <li>
+                <div class="J-fg-list clearfix J-fg-yzzh" style="position:relative;">
+                    {% csrf_token %}
+                    <input type="text" name="username" value="{{username}}" hidden>
+                    <p>填写邮箱</p>
+                    <input class="cyyj_in_hover" type="email" id="useremail" name="useremail" placeholder="邮箱账号" required/>
+                    <i class="sl_bdyh"> <a href="#">使用邮箱找回</a></i>
+                </div>
+            </li>
+          
+            <li>
+                <div class="J-fg-list clearfix">
+                    <p style="width:29%;">验证码</p>
+                    <input style="width:40%; margin-right:5px;" type="text" id="code" name="code" placeholder="验证码" required/>
+                    <a href="#"><img src="{% url 'webapp:verifycode' %}" alt="验证码加载失败" id="verifycode"></a>
+                </div>
+              <!--<div class="clear"></div>-->
+              <!--<p class="rci_prompt text-overflow J-fg-ml">验证码错误</p>-->
+            </li>
+            <li>
+                <div class="J-fg-list clearfix">
+                    <p style="width:29%;">&nbsp;</p>
+                    <div class="J-btn jfl jmt25" style="width:71%;"><input type="submit" value="发送" style="width:100%;font-weight:bold;background-color: #EEEEEE;"/></div>
+                    <div class="J-btn jfl jmt25" style="width:71%;float: right;"><a href="{% url 'webapp:find' %}" style="width:100%;font-weight:bold;">上一步</a></div>
+                </div>`
+            </li>
+            </form>
+        </ul>
+    </div>
+
+
+
+</body>
+</html>

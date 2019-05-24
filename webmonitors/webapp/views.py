@@ -10,6 +10,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from PIL import Image, ImageFont, ImageDraw
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.core.mail import send_mail, send_mass_mail
 
 from publicapp.views import *
 
@@ -21,50 +22,53 @@ def index(request):
     system_name = settings.SYSTEM_NAME
     host_info_obj = Host_info.objects.order_by('app_name')
 
-    if request.method == 'GET':
-        return render(request, 'webapp/index.html', {'sys_name': system_name, 'host_info_obj': host_info_obj})
-    elif request.method == 'POST':
-        if request.POST['app_id']:
-            # print("+++++++++++++++")
-            # print(request.POST)
-            # return HttpResponse("post请求")
-            try:
-                app_id = request.POST['app_id']
-                host_info_row = Host_info.objects.filter(id=app_id)[0]
-                # print (host_info_row.url)
-                webprobe.probe(host_info_row.url, app_id)
-                if not 'start_time' in request.POST or request.POST['start_time'] == '':
-                    start_time = int(str(time.time()).split('.')[0]) - 86400 * 3
-                    end_time = int(str(time.time()).split('.')[0])
-                    user_find = '0'
-                    print("-------------")
-                    result = Graphrrd_normal(host_info_row.id, host_info_row.url, host_info_row.app_name)
-                    # print (result, type(result))
-                else:
-                    # start_time = int(time.mktime(time.strptime(request.POST['start_time'], '%Y-%m-%d %H:%M:%S')))
-                    start_time = request.POST['start_time']
-                    # end_time = int(time.mktime(time.strptime(request.POST['end_time'], '%Y-%m-%d %H:%M:%S')))
-                    end_time = request.POST['end_time']
-                    # print(start_time, end_time)
-                    user_find = '1'
-                    print("+++++++++++++")
-                    try:
-                        # r = 5 / 1
-                        result = Graphrrd_custom(host_info_row.id, start_time, end_time, host_info_row.url, host_info_row.app_name)
-                    except Exception as e:
-                        info = ['系统提示：', '图型绘制失败,原因(' + str(e) + ')', '/webapp/index']
-                        return render(request, 'webapp/error.html', {'show_info': info})
-                return render(request, 'webapp/index.html', {'sys_name': system_name, 'host_info_obj': host_info_obj,
-                                                         'host_info_row': host_info_row, 'start_time': start_time,
-                                                         'end_time': end_time, 'user_find': user_find, 'url': str(result['url']),
-                                                             'num': str(result['num'])})
-            except Exception as e:
-                info = ['系统提示：', str(e), '/webapp/index']
+    if authenticate(username=request.session.get('name'), password=request.session.get('pass')):
+        if request.method == 'GET':
+            return render(request, 'webapp/index.html', {'sys_name': system_name, 'host_info_obj': host_info_obj})
+        elif request.method == 'POST':
+            if request.POST['app_id']:
+                # print("+++++++++++++++")
+                # print(request.POST)
+                # return HttpResponse("post请求")
+                try:
+                    app_id = request.POST['app_id']
+                    host_info_row = Host_info.objects.filter(id=app_id)[0]
+                    # print (host_info_row.url)
+                    webprobe.probe(host_info_row.url, app_id)
+                    if not 'start_time' in request.POST or request.POST['start_time'] == '':
+                        start_time = int(str(time.time()).split('.')[0]) - 86400 * 3
+                        end_time = int(str(time.time()).split('.')[0])
+                        user_find = '0'
+                        print("-------------")
+                        result = Graphrrd_normal(host_info_row.id, host_info_row.url, host_info_row.app_name)
+                        # print (result, type(result))
+                    else:
+                        # start_time = int(time.mktime(time.strptime(request.POST['start_time'], '%Y-%m-%d %H:%M:%S')))
+                        start_time = request.POST['start_time']
+                        # end_time = int(time.mktime(time.strptime(request.POST['end_time'], '%Y-%m-%d %H:%M:%S')))
+                        end_time = request.POST['end_time']
+                        # print(start_time, end_time)
+                        user_find = '1'
+                        print("+++++++++++++")
+                        try:
+                            # r = 5 / 1
+                            result = Graphrrd_custom(host_info_row.id, start_time, end_time, host_info_row.url, host_info_row.app_name)
+                        except Exception as e:
+                            info = ['系统提示：', '图型绘制失败,原因(' + str(e) + ')', '/webapp/index']
+                            return render(request, 'webapp/error.html', {'show_info': info})
+                    return render(request, 'webapp/index.html', {'sys_name': system_name, 'host_info_obj': host_info_obj,
+                                                             'host_info_row': host_info_row, 'start_time': start_time,
+                                                             'end_time': end_time, 'user_find': user_find, 'url': str(result['url']),
+                                                                 'num': str(result['num'])})
+                except Exception as e:
+                    info = ['系统提示：', str(e), '/webapp/index']
+                    return render(request, 'webapp/error.html', {'show_info': info})
+            else:
+                print("======================>None")
+                info = ['系统提示：', '未选择任何业务', '/webapp/index']
                 return render(request, 'webapp/error.html', {'show_info': info})
-        else:
-            print("======================>None")
-            info = ['系统提示：', '未选择任何业务', '/webapp/index']
-            return render(request, 'webapp/error.html', {'show_info': info})
+    else:
+        return redirect(reverse('webapp:login'))
 
 
 def add(request):
@@ -147,11 +151,14 @@ def login(request):
         try:
             username = request.POST['username']
             password = request.POST['password']
+            request.session['name'] = username
+            request.session['pass'] = password
+            request.session.set_expiry(3600)
             verify = request.POST['verify'].lower()
             verifycode = request.session.get('verifycode').lower()
 
             if verify == verifycode:
-                if authenticate(username=username, password=password):
+                if authenticate(username=request.session.get('name'), password=request.session.get('pass')):
                     return redirect(reverse('webapp:index'))
                 else:
                     return redirect(reverse('webapp:login'))
@@ -169,7 +176,7 @@ def checkuser(request):
         username = request.POST['username']
         user = User.objects.filter(username=username).first()
         if user is None:
-            return HttpResponse("false")
+            return HttpResponse("用户名错误")
         else:
             return HttpResponse("accept")
 
@@ -214,5 +221,69 @@ def verifycode(request):
     im.save(f, 'png')
     # 将内存中的图片数据返回给客户端，MIME类型为图片png
     return HttpResponse(f.getvalue(), 'image/png')
+
+
+def find(request):
+
+    if request.method == 'GET':
+        return render(request, 'webapp/verifyuser.html')
+    elif request.method == 'POST':
+        try:
+            username = request.POST['username']
+            verify = request.POST['code'].lower()
+            verifycode = request.session.get('verifycode').lower()
+
+            if verify == verifycode:
+                result = User.objects.filter(username=username)
+                if result:
+                    return render(request, 'webapp/sendmail.html', {'username': username})
+                else:
+                    print ("账户不存在")
+                    return redirect(reverse('webapp:find'))
+            else:
+                print ("验证码错误")
+                return redirect(reverse('webapp:find'))
+        except Exception as e:
+            print (e)
+            return redirect(reverse('webapp:find'))
+
+
+
+
+def mail(request):
+    if request.method == 'GET':
+        return render(request, 'webapp/sendmail.html')
+    elif request.method == 'POST':
+        try:
+            sendemail = settings.DEFAULT_FROM_EMAIL
+            username = request.POST['username']
+            useremail = request.POST['useremail']
+            verify = request.POST['code'].lower()
+            verifycode = request.session.get('verifycode').lower()
+
+            if verify == verifycode:
+                # try:
+                res = send_mail(username, '找回密码', sendemail, [useremail,])
+                print (res)
+                print ("发送成功")
+                return render(request, 'webapp/sending.html')
+                # except Exception as e:
+                #     print ("发送失败", e)
+                #     return redirect(reverse('webapp:find'))
+            else:
+                print ("验证码错误")
+                return redirect(reverse('webapp:find'))
+        except Exception as e:
+            print (e)
+            return redirect(reverse('webapp:find'))
+
+
+
+def send(request):
+    return render(request, 'webapp/sending.html')
+
+
+def result(request):
+    return render(request, 'webapp/sendsuccess.html')
 
 

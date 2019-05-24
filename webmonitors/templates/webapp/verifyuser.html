@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>填写账户信息</title>
+
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/jcss.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ny.css' %}">
+
+    <script src="{% static 'js/jquery-2.1.4.js' %}"></script>
+    <script>
+
+        $(function () {
+            $('#username').blur(function () {
+                console.log("+++")
+                $.ajax({
+                    url: '/webapp/checkuser/',
+                    type: 'post',
+                    data: {
+                        "csrfmiddlewaretoken": $("input[name=csrfmiddlewaretoken]").val(),
+                        "username": $("#username").val()
+                    },
+                    success: function (data) {
+                        console.log("+++")
+                        console.log(data)
+                        $('#userinfo').text(data);
+                    }
+                })
+            })
+
+            $('#verifycode').click(function () {
+                t = new Date()
+                this.src = '/webapp/verifycode/?t='+t.getTime()
+            })
+        })
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="J-forgetpassword nav-con jboxsize jborder">
+        
+         <ol class="sl_txzh">
+             <li class="J-current">1 填写账号信息</li>
+             <li>2 验证邮箱信息</li>
+             <li>3 邮件投递</li>
+             <li style="border:none;">4 成功</li>
+             <div class="jclear"></div>
+         </ol>
+         <ul>
+             <form action="{% url 'webapp:find' %}" method="post">
+             <li>
+                 <div class="J-fg-list clearfix">
+                    {% csrf_token %}
+                    <p>账户</p>
+                    <input class="cyyj_in_hover" type="text" id="username" name="username" placeholder="账户/用户名" required/>
+                 </div>
+                 <div class="clear"></div>
+                 <p class="rci_prompt text-overflow J-fg-textindent" id="userinfo"></p>
+             </li>
+             <li>
+                 <div class="J-fg-list clearfix">
+                     <p>验证码</p>
+                     <input style="width:50%; margin-right:5px;" type="text" id="code" name="code" placeholder="验证码" required/>
+                     <span><a href="#"><img src="{% url 'webapp:verifycode' %}" alt="验证码加载失败" id="verifycode"></a></span>
+                 </div>
+              <!--<div class="clear"></div>-->
+              <!--<p class="rci_prompt text-overflow J-fg-textindent">验证码错误</p>-->
+             </li>
+             <li>
+                 <div class="J-fg-list clearfix">
+                     <p>&nbsp;</p>
+                     <div class="J-btn jfl jmt25" style="width:80%;"><input type="submit" value="下一步" style="width: 100%;background-color: #EEEEEE;"/></div>
+                     <div class="J-btn jfl jmt25" style="width:80%;float: right;margin-right: 1%;"><a href="{% url 'webapp:login' %}" style="width:100%;">返回登录</a></div>
+                 </div>`
+             </li>
+             </form>
+         </ul>
+    </div>
+
+</body>
+</html>

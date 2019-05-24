@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>填写账户信息</title>
+
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/jcss.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ny.css' %}">
+
+</head>
+
+<body>
+
+
+    <div class="J-forgetpassword nav-con jboxsize jborder">
+        <ol>
+            <li>1 填写账号信息</li>
+            <li>2 验证账户信息</li>
+            <li>3 重置密码</li>
+            <li style="border:none;" class="J-current">4 成功</li>
+            <div class="jclear"></div>
+        </ol>
+        <div class="clear"></div>
+        <div class="J-fg-laststep clearfix">
+            <dl class="clearfix jmb50">
+                <dt><img src="{% static 'img/success.png' %}"></dt>
+                <dd>
+                    <p class="sl_gx">邮件发送成功,</p>
+                    <p>请前往邮箱查看！</p>
+                </dd>
+           </dl>
+           <div class="J-fg-btn"><a href="{% url 'webapp:login' %}" >完成</a></div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
