@@ -263,7 +263,7 @@ def mail(request):
 
             if verify == verifycode:
                 # try:
-                res = send_mail(username, '找回密码', sendemail, [useremail,])
+                res = send_mail(username, username+'账户密码忘记，需要找回密码', sendemail, [useremail,])
                 print (res)
                 print ("发送成功")
                 return render(request, 'webapp/sending.html')
