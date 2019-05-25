@@ -1,0 +1,14 @@
+div.top{
+    margin-top: 10px;
+}
+div.info{
+    background-color: lightgray;
+    border: 2px solid lightgray;
+}
+div.forms{
+    border: 2px solid lightgray;
+}
+div.forms .row{
+    border: 1px solid gray;
+    padding: 5px;
+}

@@ -168,3 +168,47 @@ NoReverseMatch: Reverse for 'success' not found. 'success' is not a valid view f
 2019-05-24 21:02:23,061 [WARNING] Not Found: /webapp/success
 2019-05-24 22:14:15,671 [WARNING] Not Found: /webapp/login/
 2019-05-25 11:15:29,515 [WARNING] Not Found: /favicon.ico
+2019-05-25 12:06:41,851 [WARNING] Not Found: /static/css/login.css
+2019-05-25 12:06:42,057 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 12:06:42,368 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 12:06:44,671 [WARNING] Not Found: /favicon.ico
+2019-05-25 12:10:36,700 [WARNING] Not Found: /static/css/login.css
+2019-05-25 12:10:36,703 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 12:10:36,791 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 12:11:20,111 [WARNING] Not Found: /static/css/login.css
+2019-05-25 12:11:20,173 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 12:11:20,176 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 12:11:20,221 [WARNING] Not Found: /favicon.ico
+2019-05-25 12:12:53,136 [WARNING] Not Found: /static/css/login.css
+2019-05-25 12:12:53,213 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 12:12:53,218 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 12:16:09,904 [WARNING] Not Found: /static/css/login.css
+2019-05-25 12:16:10,020 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 12:16:10,024 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 12:16:10,320 [WARNING] Not Found: /favicon.ico
+2019-05-25 12:16:17,605 [WARNING] Not Found: /static/css/login.css
+2019-05-25 12:16:17,927 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 12:16:17,929 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 12:16:20,817 [WARNING] Not Found: /favicon.ico
+2019-05-25 14:24:59,277 [WARNING] Not Found: /static/css/login.css
+2019-05-25 14:24:59,281 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 14:24:59,281 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 14:25:00,502 [WARNING] Not Found: /favicon.ico
+2019-05-25 14:25:52,015 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 14:25:52,016 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 14:25:52,053 [WARNING] Not Found: /static/css/login.css
+2019-05-25 14:25:52,296 [WARNING] Not Found: /favicon.ico
+2019-05-25 14:26:01,587 [WARNING] Not Found: /static/css/login.css
+2019-05-25 14:26:01,588 [WARNING] Not Found: /static/img/dl_01.png
+2019-05-25 14:26:01,592 [WARNING] Not Found: /static/js/jquery-2.1.4.js
+2019-05-25 14:39:01,788 [ERROR] Graphrrd normal rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+2019-05-25 14:39:01,812 [ERROR] Graphrrd normal rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+2019-05-25 14:39:01,812 [ERROR] Graphrrd normal rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+2019-05-25 14:39:01,812 [ERROR] Graphrrd normal rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+2019-05-25 14:39:29,528 [ERROR] Graphrrd custom rrd png error:'ascii' codec can't decode byte 0xe9 in position 2: ordinal not in range(128)
+2019-05-25 14:39:47,581 [ERROR] Graphrrd custom rrd png error:'ascii' codec can't decode byte 0xe9 in position 2: ordinal not in range(128)
+2019-05-25 14:40:09,450 [ERROR] Graphrrd custom rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+2019-05-25 14:40:35,731 [ERROR] Graphrrd normal rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+2019-05-25 14:40:35,731 [ERROR] Graphrrd normal rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+2019-05-25 14:40:35,731 [ERROR] Graphrrd normal rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+2019-05-25 14:40:35,731 [ERROR] Graphrrd normal rrd png error:'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)

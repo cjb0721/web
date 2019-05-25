@@ -1,0 +1,942 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 11:39:55 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55879e315b20 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 11:43:24 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x5583130c7b20 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 11:50:10 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x558fafec9b30 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:05:42 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x5581b9467860 ***
+uWSGI http bound on 0.0.0.0:7000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42447 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x5581b9497610
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x5581b9497610 pid: 9710 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9710)
+spawned uWSGI worker 1 (pid: 9712, cores: 2)
+spawned uWSGI worker 2 (pid: 9713, cores: 2)
+spawned uWSGI worker 3 (pid: 9714, cores: 2)
+spawned uWSGI worker 4 (pid: 9715, cores: 2)
+spawned uWSGI http 1 (pid: 9720)
+====================>publicapp.views
+[pid: 9715|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 842 bytes} [Sat May 25 12:06:38 2019] GET /webapp => generated 0 bytes in 2415 msecs (HTTP/1.1 301) 3 headers in 113 bytes (1 switches on core 0)
+[pid: 9715|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 844 bytes} [Sat May 25 12:06:41 2019] GET /webapp/ => generated 2631 bytes in 419 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+Not Found: /static/css/login.css
+[pid: 9715|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 780 bytes} [Sat May 25 12:06:41 2019] GET /static/css/login.css => generated 2101 bytes in 88 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+====================>publicapp.views
+====================>publicapp.views
+Not Found: /static/img/dl_01.png
+[pid: 9712|app: 0|req: 1/4] 127.0.0.1 () {38 vars in 801 bytes} [Sat May 25 12:06:41 2019] GET /static/img/dl_01.png => generated 2101 bytes in 232 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/js/jquery-2.1.4.js
+[pid: 9714|app: 0|req: 2/5] 127.0.0.1 () {38 vars in 775 bytes} [Sat May 25 12:06:41 2019] GET /static/js/jquery-2.1.4.js => generated 2116 bytes in 547 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+1AZ1
+[pid: 9714|app: 0|req: 2/6] 127.0.0.1 () {38 vars in 797 bytes} [Sat May 25 12:06:41 2019] GET /webapp/verifycode/ => generated 2171 bytes in 1541 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 9715|app: 0|req: 4/7] 127.0.0.1 () {38 vars in 783 bytes} [Sat May 25 12:06:44 2019] GET /favicon.ico => generated 2074 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 9720)
+worker 1 buried after 3 seconds
+worker 2 buried after 3 seconds
+worker 3 buried after 3 seconds
+worker 4 buried after 3 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:07:29 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x5558b5b72b30 ***
+uWSGI http bound on 0.0.0.0:7000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:41195 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x5558b5ba2960
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x5558b5ba2960 pid: 9835 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9835)
+spawned uWSGI worker 1 (pid: 9839, cores: 2)
+spawned uWSGI worker 2 (pid: 9840, cores: 2)
+spawned uWSGI worker 3 (pid: 9841, cores: 2)
+spawned uWSGI worker 4 (pid: 9842, cores: 2)
+spawned uWSGI http 1 (pid: 9843)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 9843)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:08:13 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55ee509e5b30 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:08:29 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x56222c71bb30 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:09:07 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55b3e03aab30 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:09:23 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55564457ab30 ***
+uWSGI http bound on 0.0.0.0:7000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:36107 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x5556445aa960
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x5556445aa960 pid: 9969 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9969)
+spawned uWSGI worker 1 (pid: 9979, cores: 2)
+spawned uWSGI worker 2 (pid: 9980, cores: 2)
+spawned uWSGI worker 3 (pid: 9981, cores: 2)
+spawned uWSGI worker 4 (pid: 9985, cores: 2)
+spawned uWSGI http 1 (pid: 9986)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 9986)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:09:38 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x555cf0cb3b30 ***
+uWSGI http bound on 0.0.0.0:7000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:38245 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x555cf0ce3960
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x555cf0ce3960 pid: 9999 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9999)
+spawned uWSGI worker 1 (pid: 10005, cores: 2)
+spawned uWSGI worker 2 (pid: 10006, cores: 2)
+spawned uWSGI worker 3 (pid: 10007, cores: 2)
+spawned uWSGI worker 4 (pid: 10008, cores: 2)
+spawned uWSGI http 1 (pid: 10009)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10009)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:10:28 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x557dc8037b30 ***
+uWSGI http bound on 0.0.0.0:7000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42935 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x557dc8067960
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x557dc8067960 pid: 10062 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10062)
+spawned uWSGI worker 1 (pid: 10068, cores: 2)
+spawned uWSGI worker 2 (pid: 10069, cores: 2)
+spawned uWSGI worker 3 (pid: 10070, cores: 2)
+spawned uWSGI worker 4 (pid: 10073, cores: 2)
+spawned uWSGI http 1 (pid: 10074)
+====================>publicapp.views
+[pid: 10070|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 875 bytes} [Sat May 25 12:10:34 2019] GET /webapp/ => generated 2631 bytes in 1372 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+====================>publicapp.views
+====================>publicapp.views
+[pid: 10070|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 778 bytes} [Sat May 25 12:10:36 2019] GET /static/css/login.css => generated 94 bytes in 99 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 10069|app: 0|req: 1/3] 127.0.0.1 () {38 vars in 774 bytes} [Sat May 25 12:10:36 2019] GET /static/js/jquery-2.1.4.js => generated 99 bytes in 101 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 10068|app: 0|req: 2/4] 127.0.0.1 () {38 vars in 800 bytes} [Sat May 25 12:10:36 2019] GET /static/img/dl_01.png => generated 94 bytes in 185 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+Y1DZ
+[pid: 10068|app: 0|req: 2/5] 127.0.0.1 () {38 vars in 796 bytes} [Sat May 25 12:10:36 2019] GET /webapp/verifycode/ => generated 2425 bytes in 349 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10074)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:10:58 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x56026b4d1b30 ***
+uWSGI http bound on 0.0.0.0:5000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:36245 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x56026b501960
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x56026b501960 pid: 10127 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10127)
+spawned uWSGI worker 1 (pid: 10151, cores: 2)
+spawned uWSGI worker 2 (pid: 10152, cores: 2)
+spawned uWSGI worker 3 (pid: 10153, cores: 2)
+spawned uWSGI worker 4 (pid: 10155, cores: 2)
+spawned uWSGI http 1 (pid: 10156)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10156)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:11:08 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55d95b254b30 ***
+uWSGI http bound on 0.0.0.0:5000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:32779 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x55d95b284960
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55d95b284960 pid: 10169 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10169)
+spawned uWSGI worker 1 (pid: 10173, cores: 2)
+spawned uWSGI worker 2 (pid: 10174, cores: 2)
+spawned uWSGI worker 3 (pid: 10175, cores: 2)
+spawned uWSGI worker 4 (pid: 10176, cores: 2)
+spawned uWSGI http 1 (pid: 10178)
+====================>publicapp.views
+[pid: 10174|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 844 bytes} [Sat May 25 12:11:19 2019] GET /webapp/ => generated 2631 bytes in 444 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 10174|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 780 bytes} [Sat May 25 12:11:20 2019] GET /static/css/login.css => generated 94 bytes in 15 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+====================>publicapp.views
+YUDI
+[pid: 10174|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 797 bytes} [Sat May 25 12:11:20 2019] GET /webapp/verifycode/ => generated 2717 bytes in 40 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 10176|app: 0|req: 2/4] 127.0.0.1 () {38 vars in 801 bytes} [Sat May 25 12:11:20 2019] GET /static/img/dl_01.png => generated 94 bytes in 47 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 10176|app: 0|req: 2/5] 127.0.0.1 () {38 vars in 775 bytes} [Sat May 25 12:11:20 2019] GET /static/js/jquery-2.1.4.js => generated 99 bytes in 59 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 10174|app: 0|req: 4/6] 127.0.0.1 () {38 vars in 783 bytes} [Sat May 25 12:11:20 2019] GET /favicon.ico => generated 85 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10178)
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:11:41 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x5591ec7c4b30 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:11:58 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55c44a894b30 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:12:13 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x5608e57cd860 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:12:46 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55a3b1b35b30 ***
+uWSGI http bound on 0.0.0.0:5000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:32985 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x55a3b1b65960
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55a3b1b65960 pid: 10325 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10325)
+spawned uWSGI worker 1 (pid: 10329, cores: 2)
+spawned uWSGI worker 2 (pid: 10330, cores: 2)
+spawned uWSGI worker 3 (pid: 10331, cores: 2)
+spawned uWSGI worker 4 (pid: 10332, cores: 2)
+spawned uWSGI http 1 (pid: 10335)
+====================>publicapp.views
+[pid: 10329|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 875 bytes} [Sat May 25 12:12:53 2019] GET /webapp/ => generated 2631 bytes in 66 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 10329|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 780 bytes} [Sat May 25 12:12:53 2019] GET /static/css/login.css => generated 94 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+====================>publicapp.views
+EB3O
+[pid: 10331|app: 0|req: 2/3] 127.0.0.1 () {38 vars in 801 bytes} [Sat May 25 12:12:53 2019] GET /static/img/dl_01.png => generated 94 bytes in 74 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 10331|app: 0|req: 2/4] 127.0.0.1 () {38 vars in 775 bytes} [Sat May 25 12:12:53 2019] GET /static/js/jquery-2.1.4.js => generated 99 bytes in 84 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 10329|app: 0|req: 3/5] 127.0.0.1 () {38 vars in 797 bytes} [Sat May 25 12:12:53 2019] GET /webapp/verifycode/ => generated 2398 bytes in 47 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10335)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:15:07 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x564296ae8b30 ***
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 12:15:50 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x56350c1bbb30 ***
+uWSGI http bound on 192.168.12.163:5000  # （直接做web服务器，使用http） fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:36991 (port auto-assigned) fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x56350c1eb960
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x56350c1eb960 pid: 10450 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10450)
+spawned uWSGI worker 1 (pid: 10454, cores: 2)
+spawned uWSGI worker 2 (pid: 10455, cores: 2)
+spawned uWSGI worker 3 (pid: 10456, cores: 2)
+spawned uWSGI worker 4 (pid: 10457, cores: 2)
+spawned uWSGI http 1 (pid: 10461)
+====================>publicapp.views
+[pid: 10457|app: 0|req: 1/1] 192.168.12.163 () {36 vars in 716 bytes} [Sat May 25 12:16:09 2019] GET /webapp/ => generated 2631 bytes in 65 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 10457|app: 0|req: 2/2] 192.168.12.163 () {38 vars in 746 bytes} [Sat May 25 12:16:09 2019] GET /static/css/login.css => generated 94 bytes in 28 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+====================>publicapp.views
+====================>publicapp.views
+6A73
+[pid: 10455|app: 0|req: 2/3] 192.168.12.163 () {38 vars in 768 bytes} [Sat May 25 12:16:09 2019] GET /static/img/dl_01.png => generated 94 bytes in 103 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 10456|app: 0|req: 1/4] 192.168.12.163 () {38 vars in 741 bytes} [Sat May 25 12:16:09 2019] GET /static/js/jquery-2.1.4.js => generated 99 bytes in 111 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 10455|app: 0|req: 2/5] 192.168.12.163 () {38 vars in 764 bytes} [Sat May 25 12:16:09 2019] GET /webapp/verifycode/ => generated 2462 bytes in 186 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 10456|app: 0|req: 2/6] 192.168.12.163 () {38 vars in 794 bytes} [Sat May 25 12:16:10 2019] GET /favicon.ico => generated 85 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+====================>publicapp.views
+[pid: 10454|app: 0|req: 1/7] 192.168.12.234 () {36 vars in 693 bytes} [Sat May 25 12:16:17 2019] GET /webapp/ => generated 2631 bytes in 64 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 10456|app: 0|req: 3/8] 192.168.12.234 () {38 vars in 756 bytes} [Sat May 25 12:16:17 2019] GET /static/css/login.css => generated 94 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 10454|app: 0|req: 2/9] 192.168.12.234 () {38 vars in 751 bytes} [Sat May 25 12:16:17 2019] GET /static/js/jquery-2.1.4.js => generated 99 bytes in 321 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 10457|app: 0|req: 3/10] 192.168.12.234 () {38 vars in 777 bytes} [Sat May 25 12:16:17 2019] GET /static/img/dl_01.png => generated 94 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+N31S
+[pid: 10456|app: 0|req: 4/11] 192.168.12.234 () {38 vars in 773 bytes} [Sat May 25 12:16:17 2019] GET /webapp/verifycode/ => generated 2304 bytes in 310 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 10456|app: 0|req: 5/12] 192.168.12.234 () {38 vars in 803 bytes} [Sat May 25 12:16:20 2019] GET /favicon.ico => generated 85 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10461)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat May 25 14:24:10 2019] ***
+compiled with version: 8.3.0 on 25 May 2019 03:31:55
+os: Linux-5.0.0-15-generic #16-Ubuntu SMP Mon May 6 17:41:33 UTC 2019
+nodename: cjb-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cjb/Web/web/webmonitors
+writing pidfile to uwsgi.pid
+detected binary path: /home/cjb/Py1901/Env/webenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/cjb/Web/web/webmonitors
+your processes number limit is 7674
+your memory page size is 4096 bytes
+detected max file descriptor number: 524288
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55936d81fc30 ***
+uwsgi socket 0 bound to TCP address 0.0.0.0:5000 #（使用nginx连接时，使用socket） fd 3
+Python version: 2.7.16 (default, Apr  6 2019, 01:42:57)  [GCC 8.3.0]
+Python main interpreter initialized at 0x55936d84f270
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 4 seconds on interpreter 0x55936d84f270 pid: 13475 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 13475)
+spawned uWSGI worker 1 (pid: 13488, cores: 2)
+spawned uWSGI worker 2 (pid: 13489, cores: 2)
+spawned uWSGI worker 3 (pid: 13490, cores: 2)
+spawned uWSGI worker 4 (pid: 13491, cores: 2)
+====================>publicapp.views
+[pid: 13489|app: 0|req: 1/1] 192.168.12.163 () {42 vars in 846 bytes} [Sat May 25 14:24:56 2019] GET /webapp/ => generated 2631 bytes in 722 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+====================>publicapp.views
+====================>publicapp.views
+[pid: 13489|app: 0|req: 2/2] 192.168.12.163 () {42 vars in 787 bytes} [Sat May 25 14:24:59 2019] GET /static/css/login.css => generated 94 bytes in 166 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13488|app: 0|req: 2/3] 192.168.12.163 () {42 vars in 782 bytes} [Sat May 25 14:24:59 2019] GET /static/js/jquery-2.1.4.js => generated 99 bytes in 162 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13488|app: 0|req: 2/4] 192.168.12.163 () {42 vars in 808 bytes} [Sat May 25 14:24:59 2019] GET /static/img/dl_01.png => generated 94 bytes in 97 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+L03F
+[pid: 13491|app: 0|req: 1/5] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:24:59 2019] GET /webapp/verifycode/ => generated 2391 bytes in 476 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13491|app: 0|req: 2/6] 192.168.12.163 () {42 vars in 790 bytes} [Sat May 25 14:25:00 2019] GET /favicon.ico => generated 85 bytes in 12 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13489|app: 0|req: 3/7] 192.168.12.234 () {42 vars in 823 bytes} [Sat May 25 14:25:51 2019] GET /webapp/ => generated 2631 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 13488|app: 0|req: 3/8] 192.168.12.234 () {42 vars in 818 bytes} [Sat May 25 14:25:52 2019] GET /static/img/dl_01.png => generated 94 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13489|app: 0|req: 4/9] 192.168.12.234 () {42 vars in 792 bytes} [Sat May 25 14:25:52 2019] GET /static/js/jquery-2.1.4.js => generated 99 bytes in 8 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+3R56
+====================>publicapp.views
+[pid: 13490|app: 0|req: 1/10] 192.168.12.234 () {42 vars in 797 bytes} [Sat May 25 14:25:52 2019] GET /static/css/login.css => generated 94 bytes in 40 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13491|app: 0|req: 3/11] 192.168.12.234 () {42 vars in 814 bytes} [Sat May 25 14:25:52 2019] GET /webapp/verifycode/ => generated 2301 bytes in 166 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13488|app: 0|req: 4/12] 192.168.12.234 () {42 vars in 800 bytes} [Sat May 25 14:25:52 2019] GET /favicon.ico => generated 85 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 13489|app: 0|req: 5/13] 192.168.12.234 () {42 vars in 823 bytes} [Sat May 25 14:26:01 2019] GET /webapp/ => generated 2631 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 13488|app: 0|req: 5/14] 192.168.12.234 () {42 vars in 818 bytes} [Sat May 25 14:26:01 2019] GET /static/img/dl_01.png => generated 94 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13491|app: 0|req: 4/15] 192.168.12.234 () {42 vars in 797 bytes} [Sat May 25 14:26:01 2019] GET /static/css/login.css => generated 94 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 2/16] 192.168.12.234 () {42 vars in 792 bytes} [Sat May 25 14:26:01 2019] GET /static/js/jquery-2.1.4.js => generated 99 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+5CBJ
+[pid: 13489|app: 0|req: 6/17] 192.168.12.234 () {42 vars in 814 bytes} [Sat May 25 14:26:01 2019] GET /webapp/verifycode/ => generated 2691 bytes in 163 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13490|app: 0|req: 3/18] 192.168.12.163 () {44 vars in 877 bytes} [Sat May 25 14:31:09 2019] GET /webapp/ => generated 2631 bytes in 21 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+O1DK
+[pid: 13489|app: 0|req: 7/19] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:31:09 2019] GET /webapp/verifycode/ => generated 2483 bytes in 16 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 4/20] 192.168.12.163 () {44 vars in 877 bytes} [Sat May 25 14:31:11 2019] GET /webapp/ => generated 2631 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+W7UC
+[pid: 13489|app: 0|req: 8/21] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:31:11 2019] GET /webapp/verifycode/ => generated 2496 bytes in 13 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13490|app: 0|req: 5/22] 192.168.12.163 () {44 vars in 877 bytes} [Sat May 25 14:31:13 2019] GET /webapp/ => generated 2631 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+IACU
+[pid: 13491|app: 0|req: 5/23] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:31:13 2019] GET /webapp/verifycode/ => generated 2698 bytes in 15 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13491|app: 0|req: 6/24] 192.168.12.163 () {44 vars in 877 bytes} [Sat May 25 14:31:16 2019] GET /webapp/ => generated 2631 bytes in 21 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+EYES
+[pid: 13489|app: 0|req: 9/25] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:31:16 2019] GET /webapp/verifycode/ => generated 2230 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 6/26] 192.168.12.163 () {44 vars in 877 bytes} [Sat May 25 14:33:40 2019] GET /webapp/ => generated 2631 bytes in 37 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+366B
+[pid: 13490|app: 0|req: 7/27] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:33:40 2019] GET /webapp/verifycode/ => generated 2122 bytes in 258 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 8/28] 192.168.12.163 () {44 vars in 906 bytes} [Sat May 25 14:33:46 2019] GET /webapp/find/ => generated 3189 bytes in 38 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+RZVP
+[pid: 13488|app: 0|req: 6/29] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:33:46 2019] GET /webapp/verifycode/ => generated 2411 bytes in 42 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13490|app: 0|req: 9/30] 192.168.12.163 () {44 vars in 901 bytes} [Sat May 25 14:33:48 2019] GET /webapp/ => generated 2631 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+GX90
+[pid: 13489|app: 0|req: 10/31] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:33:48 2019] GET /webapp/verifycode/ => generated 2702 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13488|app: 0|req: 7/32] 192.168.12.163 () {44 vars in 906 bytes} [Sat May 25 14:33:49 2019] GET /webapp/find/ => generated 3189 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+FQN1
+[pid: 13489|app: 0|req: 11/33] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:33:49 2019] GET /webapp/verifycode/ => generated 2568 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 10/34] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:33:54 2019] POST /webapp/checkuser/ => generated 6 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 0)
+验证码错误
+[pid: 13490|app: 0|req: 11/35] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:34:05 2019] POST /webapp/find/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 1)
+[pid: 13488|app: 0|req: 8/36] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:34:05 2019] GET /webapp/find/ => generated 3189 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+84X8
+[pid: 13489|app: 0|req: 12/37] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:34:05 2019] GET /webapp/verifycode/ => generated 2157 bytes in 16 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13488|app: 0|req: 9/38] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:34:09 2019] POST /webapp/checkuser/ => generated 6 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 1)
+[pid: 13489|app: 0|req: 13/39] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:34:13 2019] POST /webapp/find/ => generated 2652 bytes in 20 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+VIEI
+[pid: 13490|app: 0|req: 12/40] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:34:13 2019] GET /webapp/verifycode/ => generated 2298 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+RERC
+[pid: 13490|app: 0|req: 13/41] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:34:36 2019] GET /webapp/verifycode/?t=1558766076901 => generated 2144 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+VRMH
+[pid: 13490|app: 0|req: 14/42] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:34:39 2019] GET /webapp/verifycode/?t=1558766079763 => generated 2752 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+DX18
+[pid: 13490|app: 0|req: 15/43] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:34:42 2019] GET /webapp/verifycode/?t=1558766082067 => generated 2610 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+5OPZ
+[pid: 13488|app: 0|req: 10/44] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:34:46 2019] GET /webapp/verifycode/?t=1558766086915 => generated 2396 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+'ascii' codec can't decode byte 0xe8 in position 0: ordinal not in range(128)
+[pid: 13488|app: 0|req: 11/45] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:34:55 2019] POST /webapp/mail/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 1)
+[pid: 13491|app: 0|req: 7/46] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:34:55 2019] GET /webapp/find/ => generated 3189 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+6SVF
+[pid: 13491|app: 0|req: 8/47] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:34:55 2019] GET /webapp/verifycode/ => generated 2682 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13488|app: 0|req: 12/48] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:34:58 2019] POST /webapp/checkuser/ => generated 6 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 1)
+QRUG
+[pid: 13489|app: 0|req: 14/49] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:34:59 2019] GET /webapp/verifycode/?t=1558766099042 => generated 2523 bytes in 14 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+验证码错误
+[pid: 13489|app: 0|req: 15/50] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:35:03 2019] POST /webapp/find/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 16/51] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:35:03 2019] GET /webapp/find/ => generated 3189 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+I3JZ
+[pid: 13491|app: 0|req: 9/52] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:35:03 2019] GET /webapp/verifycode/ => generated 2706 bytes in 13 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+23GD
+[pid: 13490|app: 0|req: 17/53] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:35:06 2019] GET /webapp/verifycode/?t=1558766106282 => generated 2424 bytes in 75 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13491|app: 0|req: 10/54] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:35:08 2019] POST /webapp/checkuser/ => generated 6 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 1)
+验证码错误
+[pid: 13490|app: 0|req: 18/55] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:35:13 2019] POST /webapp/find/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 0)
+[pid: 13489|app: 0|req: 16/56] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:35:13 2019] GET /webapp/find/ => generated 3189 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+27VZ
+[pid: 13489|app: 0|req: 17/57] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:35:13 2019] GET /webapp/verifycode/ => generated 2520 bytes in 15 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13489|app: 0|req: 18/58] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:35:17 2019] POST /webapp/checkuser/ => generated 6 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 1)
+验证码错误
+[pid: 13488|app: 0|req: 13/59] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:35:22 2019] POST /webapp/find/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 0)
+[pid: 13490|app: 0|req: 19/60] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:35:22 2019] GET /webapp/find/ => generated 3189 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+5NRD
+[pid: 13490|app: 0|req: 20/61] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:35:22 2019] GET /webapp/verifycode/ => generated 2636 bytes in 19 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13488|app: 0|req: 14/62] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:35:27 2019] POST /webapp/checkuser/ => generated 6 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 1)
+验证码错误
+[pid: 13491|app: 0|req: 11/63] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:35:32 2019] POST /webapp/find/ => generated 0 bytes in 6 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 0)
+[pid: 13491|app: 0|req: 12/64] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:35:32 2019] GET /webapp/find/ => generated 3189 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+UHGX
+[pid: 13490|app: 0|req: 21/65] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:35:32 2019] GET /webapp/verifycode/ => generated 2849 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+HU8Q
+[pid: 13490|app: 0|req: 22/66] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:35:37 2019] GET /webapp/verifycode/?t=1558766137155 => generated 2762 bytes in 15 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+8MCQ
+[pid: 13491|app: 0|req: 13/67] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:35:38 2019] GET /webapp/verifycode/?t=1558766138385 => generated 2539 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+LHWS
+[pid: 13489|app: 0|req: 19/68] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:35:40 2019] GET /webapp/verifycode/?t=1558766140400 => generated 2670 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+1EEV
+[pid: 13490|app: 0|req: 23/69] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:35:41 2019] GET /webapp/verifycode/?t=1558766141369 => generated 1978 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+Y12O
+[pid: 13490|app: 0|req: 24/70] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:35:42 2019] GET /webapp/verifycode/?t=1558766142538 => generated 2423 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+8JRT
+[pid: 13490|app: 0|req: 25/71] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:35:44 2019] GET /webapp/verifycode/?t=1558766144464 => generated 2768 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+BXNY
+[pid: 13490|app: 0|req: 26/72] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:35:46 2019] GET /webapp/verifycode/?t=1558766146328 => generated 2555 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13488|app: 0|req: 15/73] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:35:52 2019] POST /webapp/checkuser/ => generated 6 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 0)
+[pid: 13489|app: 0|req: 20/74] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:35:58 2019] POST /webapp/find/ => generated 2652 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+MXL8
+[pid: 13488|app: 0|req: 16/75] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:35:59 2019] GET /webapp/verifycode/ => generated 2550 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+S9HK
+[pid: 13489|app: 0|req: 21/76] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:02 2019] GET /webapp/verifycode/?t=1558766162501 => generated 2718 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+84WW
+[pid: 13490|app: 0|req: 27/77] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:04 2019] GET /webapp/verifycode/?t=1558766164200 => generated 2350 bytes in 13 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+8A9H
+[pid: 13490|app: 0|req: 28/78] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:06 2019] GET /webapp/verifycode/?t=1558766166160 => generated 2669 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+0BZN
+[pid: 13490|app: 0|req: 29/79] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:07 2019] GET /webapp/verifycode/?t=1558766167808 => generated 2541 bytes in 13 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+04A6
+[pid: 13490|app: 0|req: 30/80] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:10 2019] GET /webapp/verifycode/?t=1558766170360 => generated 2604 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+BC6V
+[pid: 13490|app: 0|req: 31/81] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:12 2019] GET /webapp/verifycode/?t=1558766172153 => generated 2568 bytes in 13 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+2SRL
+[pid: 13490|app: 0|req: 32/82] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:13 2019] GET /webapp/verifycode/?t=1558766173880 => generated 2239 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+SS7C
+[pid: 13488|app: 0|req: 17/83] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:15 2019] GET /webapp/verifycode/?t=1558766175640 => generated 2247 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+6FUU
+[pid: 13488|app: 0|req: 18/84] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:17 2019] GET /webapp/verifycode/?t=1558766177760 => generated 2346 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+1A5I
+[pid: 13490|app: 0|req: 33/85] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:19 2019] GET /webapp/verifycode/?t=1558766179104 => generated 2588 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+61WV
+[pid: 13490|app: 0|req: 34/86] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:21 2019] GET /webapp/verifycode/?t=1558766181272 => generated 2403 bytes in 8 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+1LVR
+[pid: 13488|app: 0|req: 19/87] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:22 2019] GET /webapp/verifycode/?t=1558766182336 => generated 2069 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+GEC8
+[pid: 13488|app: 0|req: 20/88] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:23 2019] GET /webapp/verifycode/?t=1558766183216 => generated 2490 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+IST9
+[pid: 13490|app: 0|req: 35/89] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:25 2019] GET /webapp/verifycode/?t=1558766185280 => generated 2459 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+UW7X
+[pid: 13490|app: 0|req: 36/90] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:26 2019] GET /webapp/verifycode/?t=1558766186104 => generated 2667 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+89L4
+[pid: 13488|app: 0|req: 21/91] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:29 2019] GET /webapp/verifycode/?t=1558766189720 => generated 2434 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+ALV6
+[pid: 13488|app: 0|req: 22/92] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:31 2019] GET /webapp/verifycode/?t=1558766191528 => generated 2338 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+3AJE
+[pid: 13490|app: 0|req: 37/93] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:33 2019] GET /webapp/verifycode/?t=1558766193216 => generated 2771 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+STZI
+[pid: 13490|app: 0|req: 38/94] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:36 2019] GET /webapp/verifycode/?t=1558766196088 => generated 2452 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+ZUML
+[pid: 13490|app: 0|req: 39/95] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:38 2019] GET /webapp/verifycode/?t=1558766198024 => generated 2711 bytes in 14 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+EX7I
+[pid: 13488|app: 0|req: 23/96] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:39 2019] GET /webapp/verifycode/?t=1558766199960 => generated 2474 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+77W7
+[pid: 13490|app: 0|req: 40/97] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:40 2019] GET /webapp/verifycode/?t=1558766200904 => generated 1822 bytes in 13 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+Y226
+[pid: 13488|app: 0|req: 24/98] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:42 2019] GET /webapp/verifycode/?t=1558766202032 => generated 2262 bytes in 19 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+O102
+[pid: 13490|app: 0|req: 41/99] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:36:44 2019] GET /webapp/verifycode/?t=1558766204392 => generated 2308 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+'ascii' codec can't decode byte 0xe8 in position 0: ordinal not in range(128)
+[pid: 13490|app: 0|req: 42/100] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:36:57 2019] POST /webapp/mail/ => generated 0 bytes in 3 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 1)
+[pid: 13491|app: 0|req: 14/101] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:36:57 2019] GET /webapp/find/ => generated 3189 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+5WVB
+[pid: 13489|app: 0|req: 22/102] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:36:57 2019] GET /webapp/verifycode/ => generated 2408 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13491|app: 0|req: 15/103] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:37:00 2019] POST /webapp/checkuser/ => generated 6 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 1)
+[pid: 13488|app: 0|req: 25/104] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:37:09 2019] POST /webapp/find/ => generated 2652 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+S8XK
+[pid: 13490|app: 0|req: 43/105] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:37:09 2019] GET /webapp/verifycode/ => generated 2775 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+'ascii' codec can't decode byte 0xe8 in position 0: ordinal not in range(128)
+[pid: 13488|app: 0|req: 26/106] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:37:20 2019] POST /webapp/mail/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 1)
+[pid: 13491|app: 0|req: 16/107] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:37:20 2019] GET /webapp/find/ => generated 3189 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+UZEL
+[pid: 13490|app: 0|req: 44/108] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:37:20 2019] GET /webapp/verifycode/ => generated 2451 bytes in 14 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13490|app: 0|req: 45/109] 192.168.12.163 () {50 vars in 996 bytes} [Sat May 25 14:37:22 2019] POST /webapp/checkuser/ => generated 6 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 1)
+SRYY
+[pid: 13491|app: 0|req: 17/110] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:37:25 2019] GET /webapp/verifycode/?t=1558766245098 => generated 2322 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13489|app: 0|req: 23/111] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:37:31 2019] POST /webapp/find/ => generated 2652 bytes in 6 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+AS4W
+[pid: 13490|app: 0|req: 46/112] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:37:31 2019] GET /webapp/verifycode/ => generated 2529 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+VVZ6
+[pid: 13490|app: 0|req: 47/113] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:37:34 2019] GET /webapp/verifycode/?t=1558766254593 => generated 2282 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+VO75
+[pid: 13490|app: 0|req: 48/114] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:37:36 2019] GET /webapp/verifycode/?t=1558766256833 => generated 2399 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+2G92
+[pid: 13488|app: 0|req: 27/115] 192.168.12.163 () {42 vars in 840 bytes} [Sat May 25 14:37:38 2019] GET /webapp/verifycode/?t=1558766258601 => generated 2261 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+'ascii' codec can't decode byte 0xe8 in position 0: ordinal not in range(128)
+[pid: 13490|app: 0|req: 49/116] 192.168.12.163 () {52 vars in 1100 bytes} [Sat May 25 14:37:46 2019] POST /webapp/mail/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 149 bytes (1 switches on core 1)
+[pid: 13489|app: 0|req: 24/117] 192.168.12.163 () {46 vars in 942 bytes} [Sat May 25 14:37:46 2019] GET /webapp/find/ => generated 3189 bytes in 1 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+00CX
+[pid: 13489|app: 0|req: 25/118] 192.168.12.163 () {42 vars in 809 bytes} [Sat May 25 14:37:46 2019] GET /webapp/verifycode/ => generated 2148 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+[pid: 13488|app: 0|req: 28/119] 192.168.12.163 () {44 vars in 901 bytes} [Sat May 25 14:37:50 2019] GET /webapp/ => generated 2631 bytes in 8 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+L2XG
+[pid: 13489|app: 0|req: 26/120] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:37:50 2019] GET /webapp/verifycode/ => generated 2528 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+[pid: 13490|app: 0|req: 50/121] 192.168.12.163 () {50 vars in 991 bytes} [Sat May 25 14:37:54 2019] POST /webapp/checkuser/ => generated 6 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 0)
+DTS9
+[pid: 13491|app: 0|req: 18/122] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:01 2019] GET /webapp/verifycode/?t=1558766281874 => generated 2605 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+O4H4
+[pid: 13490|app: 0|req: 51/123] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:02 2019] GET /webapp/verifycode/?t=1558766282929 => generated 2426 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+Z6FU
+[pid: 13491|app: 0|req: 19/124] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:03 2019] GET /webapp/verifycode/?t=1558766283793 => generated 2487 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+KAWM
+[pid: 13489|app: 0|req: 27/125] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:05 2019] GET /webapp/verifycode/?t=1558766285530 => generated 3006 bytes in 14 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+7GJL
+[pid: 13490|app: 0|req: 52/126] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:07 2019] GET /webapp/verifycode/?t=1558766287010 => generated 2554 bytes in 14 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+9SEO
+[pid: 13490|app: 0|req: 53/127] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:07 2019] GET /webapp/verifycode/?t=1558766287809 => generated 2552 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+HG0I
+[pid: 13488|app: 0|req: 29/128] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:09 2019] GET /webapp/verifycode/?t=1558766289977 => generated 2872 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+A9TU
+[pid: 13488|app: 0|req: 30/129] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:12 2019] GET /webapp/verifycode/?t=1558766292706 => generated 2637 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+TDAT
+[pid: 13490|app: 0|req: 54/130] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:13 2019] GET /webapp/verifycode/?t=1558766293794 => generated 2382 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+T5AZ
+[pid: 13490|app: 0|req: 55/131] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:14 2019] GET /webapp/verifycode/?t=1558766294626 => generated 2454 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+R0U4
+[pid: 13488|app: 0|req: 31/132] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:16 2019] GET /webapp/verifycode/?t=1558766296354 => generated 2490 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+7BG5
+[pid: 13488|app: 0|req: 32/133] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:18 2019] GET /webapp/verifycode/?t=1558766298490 => generated 2546 bytes in 14 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+LYW4
+[pid: 13490|app: 0|req: 56/134] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:19 2019] GET /webapp/verifycode/?t=1558766299362 => generated 2439 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+RBXQ
+[pid: 13490|app: 0|req: 57/135] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:20 2019] GET /webapp/verifycode/?t=1558766300866 => generated 2700 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)
+O55Q
+[pid: 13490|app: 0|req: 58/136] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:23 2019] GET /webapp/verifycode/?t=1558766303771 => generated 2289 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 0)
+验证码错误
+[pid: 13488|app: 0|req: 33/137] 192.168.12.163 () {52 vars in 1085 bytes} [Sat May 25 14:38:32 2019] POST /webapp/ => generated 2631 bytes in 10 msecs (HTTP/1.1 200) 6 headers in 406 bytes (1 switches on core 0)
+RGLR
+[pid: 13490|app: 0|req: 59/138] 192.168.12.163 () {42 vars in 804 bytes} [Sat May 25 14:38:33 2019] GET /webapp/verifycode/ => generated 2268 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 237 bytes (1 switches on core 1)
+3S3Y
+[pid: 13488|app: 0|req: 34/139] 192.168.12.163 () {42 vars in 835 bytes} [Sat May 25 14:38:34 2019] GET /webapp/verifycode/?t=1558766314691 => generated 2305 bytes in 12 msecs (HTTP/1.1 200) 5 headers in 237 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 60/140] 192.168.12.163 () {50 vars in 991 bytes} [Sat May 25 14:38:36 2019] POST /webapp/checkuser/ => generated 6 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 107 bytes (1 switches on core 0)
+[pid: 13491|app: 0|req: 20/141] 192.168.12.163 () {52 vars in 1085 bytes} [Sat May 25 14:38:49 2019] POST /webapp/ => generated 0 bytes in 48 msecs (HTTP/1.1 302) 6 headers in 278 bytes (1 switches on core 0)
+[pid: 13490|app: 0|req: 61/142] 192.168.12.163 () {46 vars in 939 bytes} [Sat May 25 14:38:49 2019] GET /webapp/index/ => generated 2781 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+-------------
++_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+/home/cjb/Web/web/webmonitors/rrd/www.baidu.com/61_time.rrd
+/home/cjb/Web/web/webmonitors/rrd/www.baidu.com/61_download.rrd
+/home/cjb/Web/web/webmonitors/rrd/www.baidu.com/61_unavailable.rrd
++_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+[pid: 13491|app: 0|req: 21/143] 192.168.12.163 () {52 vars in 1103 bytes} [Sat May 25 14:39:00 2019] POST /webapp/index/ => generated 8398 bytes in 1218 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 62/144] 192.168.12.163 () {44 vars in 1015 bytes} [Sat May 25 14:39:02 2019] GET /webapp/list/?app_id=61&start_time=1558507141&end_time=1558766341 => generated 5651 bytes in 104 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
++++++++++++++
+[pid: 13490|app: 0|req: 63/145] 192.168.12.163 () {52 vars in 1103 bytes} [Sat May 25 14:39:28 2019] POST /webapp/index/ => generated 4433 bytes in 1060 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 64/146] 192.168.12.163 () {44 vars in 1039 bytes} [Sat May 25 14:39:29 2019] GET /webapp/list/?app_id=62&start_time=2019-05-01T01:01&end_time=2019-05-02T01:01 => generated 3367 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
++++++++++++++
+[pid: 13490|app: 0|req: 65/147] 192.168.12.163 () {52 vars in 1103 bytes} [Sat May 25 14:39:45 2019] POST /webapp/index/ => generated 4433 bytes in 1715 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 66/148] 192.168.12.163 () {44 vars in 1039 bytes} [Sat May 25 14:39:47 2019] GET /webapp/list/?app_id=62&start_time=2019-05-01T01:01&end_time=2019-05-31T01:01 => generated 3932 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
++++++++++++++
+[pid: 13490|app: 0|req: 67/149] 192.168.12.163 () {52 vars in 1103 bytes} [Sat May 25 14:40:09 2019] POST /webapp/index/ => generated 4446 bytes in 325 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 68/150] 192.168.12.163 () {44 vars in 1039 bytes} [Sat May 25 14:40:09 2019] GET /webapp/list/?app_id=61&start_time=2019-05-01T01:01&end_time=2019-05-31T01:01 => generated 5759 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 13490|app: 0|req: 69/151] 192.168.12.163 () {44 vars in 910 bytes} [Sat May 25 14:40:18 2019] GET /webapp/add/ => generated 3515 bytes in 8 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+########################################
+https://www.baidu.com
+########################################
+[61, 65]
+61
+65
+[pid: 13488|app: 0|req: 35/152] 192.168.12.163 () {52 vars in 1097 bytes} [Sat May 25 14:40:30 2019] POST /webapp/add/ => generated 1297 bytes in 103 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 13488|app: 0|req: 36/153] 192.168.12.163 () {44 vars in 910 bytes} [Sat May 25 14:40:31 2019] GET /webapp/index => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 119 bytes (1 switches on core 1)
+[pid: 13491|app: 0|req: 22/154] 192.168.12.163 () {44 vars in 912 bytes} [Sat May 25 14:40:31 2019] GET /webapp/index/ => generated 2893 bytes in 37 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+-------------
++_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+/home/cjb/Web/web/webmonitors/rrd/www.baidu.com/65_time.rrd
+/home/cjb/Web/web/webmonitors/rrd/www.baidu.com/65_download.rrd
+/home/cjb/Web/web/webmonitors/rrd/www.baidu.com/65_unavailable.rrd
++_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+[pid: 13488|app: 0|req: 37/155] 192.168.12.163 () {52 vars in 1103 bytes} [Sat May 25 14:40:35 2019] POST /webapp/index/ => generated 8510 bytes in 427 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 13491|app: 0|req: 23/156] 192.168.12.163 () {44 vars in 1015 bytes} [Sat May 25 14:40:35 2019] GET /webapp/list/?app_id=65&start_time=1558507235&end_time=1558766435 => generated 2209 bytes in 32 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 1)
+[pid: 13490|app: 0|req: 70/157] 192.168.12.234 () {44 vars in 854 bytes} [Sat May 25 14:40:46 2019] GET /webapp/ => generated 2631 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+CW60
+[pid: 13490|app: 0|req: 71/158] 192.168.12.234 () {42 vars in 814 bytes} [Sat May 25 14:40:47 2019] GET /webapp/verifycode/ => generated 2754 bytes in 420 msecs (HTTP/1.1 200) 5 headers in 240 bytes (1 switches on core 1)

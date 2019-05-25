@@ -45,9 +45,9 @@ DOWN_APEED_YMAX=8388608
 SECRET_KEY = '+w!_mpg-*%7imiu(7a@mbe#1)$oggefb=j*^bkh7+zt54&(q%i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -143,6 +143,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATIC_ROOT = '/home/cjb/Web/web/webmonitors/staticfolder'
+
 
 # 邮件发送配置
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

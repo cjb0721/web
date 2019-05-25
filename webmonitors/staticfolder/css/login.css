@@ -1,0 +1,72 @@
+.container{
+    width: 1100px;
+    margin: 0 auto;
+    /* clear: both; */
+}
+.row{
+    margin: 50px auto;
+    overflow: hidden;
+}
+.row_login{
+    width: 438px;
+    height: 599px;
+    float: right;
+    color: #666;
+}
+.row_login dt h1{
+    /* width: 438px;
+    height: 77px; */
+    line-height: 77px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 1px solid #E5E5E5;
+    /* color: #666; */
+}
+.row_login dd{
+    height: 65px;
+    text-align: center;
+}
+.row_login dd:nth-of-type(1){
+    margin-top: 53px;
+}
+.row_login dd:nth-of-type(3){
+    margin-left: 70px;
+    float: left;
+    float: left;
+}
+.row_login dd input{
+    width: 276px;
+    height: 48px;
+    border: 1px solid #E5E5E5;
+    line-height: 48px;
+    padding-left: 20px;
+    font: 400 13.3333px Arial;
+}
+.row_login dd:nth-of-type(3) input{
+    width: 183px;
+    float: left;
+    margin-left: 20px;;
+}
+
+.row_login dd button{
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #F75C5C;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+    /* display: inline-block */
+}
+#find_pass{
+    color: #999;
+    line-height: 65px;
+    position: relative;
+    top: 65px;
+    text-decoration: none;
+}
+#find_pass span{
+    color: #F75C5C;
+}
